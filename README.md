@@ -69,3 +69,40 @@ A preocupação com a eficiência energética e sustentabilidade é uma demanda 
   "tipo_imovel": "Casa",
   "horas_alto_consumo": 8
 }
+```
+
+## Equipe
+
+* Samanta Sá | Backend Developer - Scrum Maser
+https://www.linkedin.com/in/engsamantasa/
+https://github.com/engsamantasa
+
+* Kauã da Silva Barros | Backend Developer
+https://github.com/kaua3-c
+
+* Alan Anderson | Backend Developer
+https://www.linkedin.com/in/alan-anderson-dev/
+https://github.com/alanandersondev
+
+* Mayara Medeiros Giangiacomo | Backend Developer
+
+
+* Lídia Moura | Data analyst - Líder
+https://www.linkedin.com/in/lidimoura/
+https://github.com/lidimoura
+
+* Alex Furukawa | Full Stack Developer
+https://www.linkedin.com/in/lexkawa/
+https://github.com/dev-corvus/
+
+* Pedro Henrique Rodrigues da Costa Tireli | Data Scientist
+https://github.com/phtirelli
+https://www.linkedin.com/in/phtirelli/
+
+
+* Dryelli Vitoria Martins de Freitas | Architect (Software / Solution Architect)
+
+
+* Antônio Carlos Martins Teixeira | Frontend Developer
+
+
