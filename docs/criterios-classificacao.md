@@ -1,0 +1,1 @@
+# Colocar limiares de Eficiente/Moderado/Ineficiente
