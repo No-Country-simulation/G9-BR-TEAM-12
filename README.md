@@ -1,4 +1,4 @@
-# Hackathon ONE – Projetos G9 | Alura + Oracle
+# Hackathon ONE – Projetos G9 | Alura + Oracle 
 
 <p align="center">
   <a href="https://alura-es-cursos.github.io/projetos-hackathon-g9-brasil/">
@@ -74,35 +74,38 @@ A preocupação com a eficiência energética e sustentabilidade é uma demanda 
 ## Equipe 12
 
 * Samanta Sá | Backend Developer - Scrum Maser
-https://www.linkedin.com/in/engsamantasa/
-https://github.com/engsamantasa
+[Github](https://github.com/engsamantasa)
+[Linkedin](https://www.linkedin.com/in/engsamantasa/)
 
 * Kauã da Silva Barros | Backend Developer
-https://github.com/kaua3-c
+[Github](https://github.com/kaua3-c)
 
 * Alan Anderson | Backend Developer 
-https://www.linkedin.com/in/alan-anderson-dev/
-https://github.com/alanandersondev
+[Github](https://github.com/alanandersondev)
+[Linkedin](https://www.linkedin.com/in/alan-anderson-dev/)
+
 
 * Mayara Medeiros Giangiacomo | Backend Developer
 
 
 * Lídia Moura | Data analyst - Líder
-https://www.linkedin.com/in/lidimoura/
-https://github.com/lidimoura
+[Github](https://github.com/lidimoura)
+[Linkedin](https://www.linkedin.com/in/lidimoura/)
+
 
 * Alex Furukawa | Full Stack Developer
-https://www.linkedin.com/in/lexkawa/
-https://github.com/dev-corvus/
+[Github](https://github.com/dev-corvus/)
+[Linkedin](https://www.linkedin.com/in/lexkawa/)
+
 
 * Pedro Henrique Rodrigues da Costa Tireli | Data Scientist
-https://github.com/phtirelli
-https://www.linkedin.com/in/phtirelli/
+[Github](https://github.com/phtirelli)
+[Linkedin](https://www.linkedin.com/in/phtirelli/)
 
 
 * Dryelli Vitoria Martins de Freitas | Architect (Software / Solution Architect)
 
 
 * Antônio Carlos Martins Teixeira | Frontend Developer
-
+[Github](https://github.com/digichargeac)
 
