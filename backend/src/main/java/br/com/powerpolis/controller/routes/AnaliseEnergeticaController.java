@@ -107,6 +107,7 @@ public class AnaliseEnergeticaController {
         return "Eficiente";
     }
 
+    // talvez remover depois
     public record AnaliseEnergeticaRequest(
             @NotNull Double consumo_kwh,
             @NotNull Boolean uso_horario_pico,
