@@ -9,7 +9,7 @@
 
 ---
 
-## 📝 Descrição do Projeto
+## 📝 Descrição do Projeto.
 
 O objetivo deste projeto é criar uma solução inteligente capaz de analisar padrões de consumo de energia elétrica e gerar informações que auxiliem na tomada de decisões relacionadas à eficiência energética. 
 
