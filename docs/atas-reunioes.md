@@ -61,8 +61,30 @@
 
 **Participantes:** Alex Furukawa, Lídia Moura & Samanta Sá (3/3)
 * Assistimos em conjunto a última aula da imersão de arquitetura da Alura;
-** CORS - Cross-Origin Resource Sharing
+** CORS - Cross-Origin Resource Sharing;
+** Antigravity.
+* Debate entre responsabilidades do backend e data science;
+* Alimentamos o notebook para gerar um mapa mental das tarefas de cada área e tecnologias utilizadas;
+* Alex desenhou um wireframe low fidelity do projeto web para nortear Carlos que pela manhã iniciu o esboço do frontend;
+* Finalizando com um infográfico e um vídeo preparado anteriormente por Lídia para ser apresentado na reunião obrigatória.
 
-## Reunião 22/07 (quinta-feira)
 
-**Participantes:** Alan Anderson, Alex Furukawa, Carlos Teixeira, Kauã Barros, Lídia Moura, Pedro Tireli & Samanta Sá (7/9)
+## Reunião 23/07 (quinta-feira)
+
+**Participantes:** Alan Anderson, Alex Furukawa, Carlos Teixeira, Kauã Barros, Lídia Moura & Samanta Sá (6/9)
+* Lídia apresentou slides preparados por Samanta, para as próximas reuniões um membro trazer uma pauta e fazer o bom uso do tempo para evitarmos longas reuniões;
+* Carlos compartilhou progresso no frontend e Alex ficou de auxiliar com os commits e criação da branch para cada membro;
+* Debate sobre imóveis considerados no MVP, concluímos que Casa e Apartamento são suficientes e que poderão ser imprimorados no futuro;
+* Samanta apresentou umas ideias de paleta de cores e Lídia ficou responsável em criar uma enquete para decidirmos;
+* Foi definida uma reunião extra para o time de backend.
+
+## Reunião Backend 24/07 (sexta-feira)
+
+**Participantes:** Alan Anderson, Alex Furukawa, Kauã Barros & Samanta Sá (4/4)
+
+* Lídia criou a enquete & Alex compartilhou uma a uma simulação da página inicial com o uso da paleta de cores escolhida + 2 cores extras complementares existentes no logo;
+* Atribuições de tarefas no Trello;
+* Samanta reforçou a atualização do Trello;
+* Alex ajudou Carlos com o GitHub e como todos os membros da equipe estão podem alterar o código, é evidente a comunicação de mudanças quando necessário, perguntar quando um alteração não for clara & comentar o próprio código;
+* Debate em aberto: como as Python e Java se conectam no projeto.
+
