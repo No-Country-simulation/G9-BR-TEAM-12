@@ -72,3 +72,53 @@ nav {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.25);
 
 }
+
+main {
+    padding: 2rem 1.5rem;
+}
+
+.team-page h1 {
+    color: rgb(213, 222, 222);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.team-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+}
+
+.member-card {
+    background-color: #2a2a2a;
+    border: 1px solid #3f3f3f;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.member-card h2 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+}
+
+.member-card p {
+    color: #d8d8d8;
+    margin-bottom: 0.7rem;
+}
+
+.member-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.member-links a {
+    color: #7dc3ff;
+    text-decoration: none;
+}
+
+.member-links a:hover {
+    color: #f9694d;
+}

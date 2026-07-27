@@ -73,7 +73,7 @@ A preocupação com a eficiência energética e sustentabilidade é uma demanda 
 
 ## Equipe 12
 
-* Samanta Sá | Backend Developer - Scrum Maser
+* Samanta Sá | Backend Developer - Scrum Master
 [Github](https://github.com/engsamantasa)
 [Linkedin](https://www.linkedin.com/in/engsamantasa/)
 

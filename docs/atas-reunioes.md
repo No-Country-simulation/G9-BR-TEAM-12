@@ -88,3 +88,8 @@
 * Alex ajudou Carlos com o GitHub e como todos os membros da equipe estão podem alterar o código, é evidente a comunicação de mudanças quando necessário, perguntar quando um alteração não for clara & comentar o próprio código;
 * Debate em aberto: como as Python e Java se conectam no projeto.
 
+## Reunião Backend 27/07 (segunda-feira)
+
+**Participantes:** Alan Anderson, Alex Furukawa, Carlos Teixeira, Kauã Barros, Lídia Moura & Samanta Sá (6/9)
+* Realocações de tarefas de Alex, devido a um imprevisto pessoal de Carlos;
+* 
