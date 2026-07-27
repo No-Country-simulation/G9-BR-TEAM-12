@@ -3,7 +3,7 @@
 <html>
 
     <head>
-        <title>Projeto Powerpolis</title>
+        <title>Powerpolis</title>
 
         <meta charset="UTF-8">
 
@@ -18,7 +18,7 @@
 
         <link
             rel="icon"
-            href="powerpolis-logo.png"
+            href="assets/powerpolis-logo.png"
             type="image/logo"
         >
 
@@ -36,29 +36,27 @@
 
     <body>
         <header>
-            <nav class="menu">
-
-                <ul class="links" id="links">
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="about.html">Sobre</a></li>
-                    <li><a href="equipe.html">Equipe</a></li>
-                    <li>
-                        <button class="botao-menu" id="botao-menu">
-                            ☰
-                        </button>
-                    </li>
-                </ul>
-
-            </nav>
+            <div id="navbar-container"></div>
         </header>
         
         <main>
-            
+            <div class="about-container">
+                <h1>Sobre o Projeto Powerpolis</h1>
+                <p>
+                    O Powerpolis é a solução da equipe G9-BR-TEAM-12 para o desafio EnergiAI: uma aplicação que recebe dados de consumo energético (kWh mensal, uso em horário de pico, quantidade de equipamentos, tipo de imóvel, horas de alto consumo) e classifica o perfil em Eficiente, Moderado ou Ineficiente, gerando recomendações de otimização e estimativa de custo mensal via API REST, com integração obrigatória à Oracle Cloud Infrastructure (OCI).
+                </p>
             
         </main>
 
 
-
+    <script>
+    fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbar-container').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading the navbar:', error));
+    </script>
     </body>
 
 

@@ -35,30 +35,23 @@
     </head>
 
     <body>
-        <header>
-            <nav class="menu">
-
-                <ul class="links" id="links">
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="about.html">Sobre</a></li>
-                    <li><a href="equipe.html">Equipe</a></li>
-                    <li>
-                        <button class="botao-menu" id="botao-menu">
-                            ☰
-                        </button>
-                    </li>
-                </ul>
-
-            </nav>
+        <header>     
+            <nav id="navbar-container"></nav>
         </header>
         
         <main>
             <h1>Projeto Powerpolis</h1>
-            
         </main>
 
 
-
+        <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading the navbar:', error));
+        </script>
     </body>
 
 

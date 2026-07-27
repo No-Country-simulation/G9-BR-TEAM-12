@@ -5,6 +5,7 @@
 * Apresentação da equipe;
 * Compreensão do projeto e regras da No Country;
 * Lídia apresentou ideias iniciais sobre o dataset e compartilhou uma ferramenta para calcular o consumo de energia, adiantando que iremos utilizar dados reais;
+* Pedro criou um dataset mockado;
 * Lídia foi escolhida como líder do grupo.
 
 ## Reunião 11/07 (sábado)
@@ -50,6 +51,7 @@
 ## Reunião 20/07 (segunda-feira)
 
 **Participantes:** Alan Anderson, Alex Furukawa, Carlos Teixeira, Kauã Barros, Lídia Moura & Samanta Sá (6/9)
+* Pedro não justificou sua ausência;
 * Lídia está finalizando a documentação do projeto;
 * Lídia apresentou o progresso do showcase e ideias futuras no Streamlit;
 * Equipe analisou os perfils da No Country e atualizou fotos e descrição conforme necessário para realizarmos um post no Linkedin;
@@ -72,6 +74,7 @@
 ## Reunião 23/07 (quinta-feira)
 
 **Participantes:** Alan Anderson, Alex Furukawa, Carlos Teixeira, Kauã Barros, Lídia Moura & Samanta Sá (6/9)
+* Pedro não interagiu com a equipe e Lídia continua sem respostas sobre o dataset;
 * Lídia apresentou slides preparados por Samanta, para as próximas reuniões um membro trazer uma pauta e fazer o bom uso do tempo para evitarmos longas reuniões;
 * Carlos compartilhou progresso no frontend e Alex ficou de auxiliar com os commits e criação da branch para cada membro;
 * Debate sobre imóveis considerados no MVP, concluímos que Casa e Apartamento são suficientes e que poderão ser imprimorados no futuro;
@@ -90,6 +93,11 @@
 
 ## Reunião Backend 27/07 (segunda-feira)
 
-**Participantes:** Alan Anderson, Alex Furukawa, Carlos Teixeira, Kauã Barros, Lídia Moura & Samanta Sá (6/9)
-* Realocações de tarefas de Alex, devido a um imprevisto pessoal de Carlos;
-* 
+**Participantes:** Alex Furukawa, Kauã Barros, Lídia Moura & Samanta Sá (4/9)
+* Mayara havia entrado no Discord, justificando sua ausência e planejamos sua integração com a equipe, porém não interagiu no canal pré-reunião;
+* Alan entrou na reunião já com 1h de andamento e Lídia continua sem respostas de Pedro;
+* Realocações de tarefas de Alex, devido a um imprevisto pessoal de Carlos avisado no domingo;
+* Debate sobre atribuições de backend & data science;
+* Definimos os tipos de imóveis para: residência, comércio e indústria;
+* Kauã compartilhou demo de equipes anteriores para definirmos o que o modelo preditivo deve apresentar e concluímos que poderia ser uma ideia simples, por exemplo, de acordo com o histórico de consumo do usuário, o modelo mostra a predição eficiente, moderado ou ineficiente para o mês seguinte;
+* Uma reunião de arquitetura será realizada amanhã para esclarecer esses pontos. 
