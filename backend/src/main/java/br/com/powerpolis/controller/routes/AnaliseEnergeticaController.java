@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 
-
-
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -42,7 +40,8 @@ public class AnaliseEnergeticaController {
 
         return ResponseEntity.ok(service.analisar(request));
     }
-//    @GetMapping("/analise-energetica")
+
+    //    @GetMapping("/analise-energetica")
 //    public ResponseEntity<String> instrucoes() {
 //        return ResponseEntity.ok("Use POST /analise-energetica com JSON no corpo para analisar o consumo energético.");
 //    }
