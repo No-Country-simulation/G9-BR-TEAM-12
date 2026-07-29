@@ -18,10 +18,13 @@ import java.util.List;
 @AllArgsConstructor
 public class AnaliseEnergeticaResponse {
 
+    @JsonProperty("categoria")
     private String categoria;
 
+    @JsonProperty("probabilidade")
     private Double probabilidade;
 
+    @JsonProperty("recomendacoes")
     private List<String> recomendacoes;
 
     @JsonProperty("custo_estimado_mensal")

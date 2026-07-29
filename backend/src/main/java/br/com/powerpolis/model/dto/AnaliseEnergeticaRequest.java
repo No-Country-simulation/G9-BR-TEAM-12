@@ -40,7 +40,7 @@ public class AnaliseEnergeticaRequest {
     @NotNull(message = "temperatura é obrigatória")
     @DecimalMin(value = "15.0", message = "temperatura deve estar entre 15 e 35")
     @DecimalMax(value = "35.0", message = "temperatura deve estar entre 15 e 35")
-    private Double temperatura;
+        private Double temperatura;
 
     @JsonProperty("ar_condicionado")
     @NotNull(message = "ar_condicionado é obrigatório")
