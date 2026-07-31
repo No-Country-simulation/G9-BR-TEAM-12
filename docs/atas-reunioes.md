@@ -100,4 +100,23 @@
 * Debate sobre atribuições de backend & data science;
 * Definimos os tipos de imóveis para: residência, comércio e indústria;
 * Kauã compartilhou demo de equipes anteriores para definirmos o que o modelo preditivo deve apresentar e concluímos que poderia ser uma ideia simples, por exemplo, de acordo com o histórico de consumo do usuário, o modelo mostra a predição eficiente, moderado ou ineficiente para o mês seguinte;
+* Alex compartilhou a estrutura do front-end com o uso da paleta de cores definida e adicionou os nomes e links dos membros;
 * Uma reunião de arquitetura será realizada amanhã para esclarecer esses pontos. 
+
+## Reunião Arquitetura 28/07 (quarta-feita)
+
+**Participantes:** Alex Furukawa, Lídia Moura & Samanta Sá (3/3)
+* Lídia continua o data science sozinha, retreinando o modelo de Pedro;
+* Definimos as responsabilidades do backend e data science apontando a maior dificuldade da equipe: conectar as áreas no MVP;
+* Equipe de arquitetura acessou o notebook em conjunto, gerando um vídeo para explicar sobre a conexão;
+* Samanta ficou de atualizar o documento de API e a equipe de arquitetura ler antes da reunião obrigatória.
+
+## Reunião Backend 30/07 (quinta-feira)
+
+**Participantes:** Alan Anderson, Alex Furukawa, Kauã Barros, Lídia Moura & Samanta Sá (5/9)
+* Alex auxiliou Carlos com o GitHub;
+* Alex criou o problem statement para adicionar no index;
+* Lídia aprensentou gráficos gerados pelo modelo já serializado, já podendo ser usado pelo backend, sem a necessidade de dados mockados;
+* Alan compartilhou transcrição de um dos cursos da Alura sobre conectar o front com o back;
+* Alex ressaltou a equipe de atualizar a documentação, principalmente nas incrementações futuras, pois por equanto foi feito por Lídia e este tópico apenas consta sobre o data science;
+* Ficou definido que se não for possível conectar da forma adequada, o frontend criará uma lógica isolada somente baseando nos parâmetros baseados no modelo treinado.
