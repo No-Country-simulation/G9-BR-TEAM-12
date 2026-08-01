@@ -111,7 +111,7 @@
 * Equipe de arquitetura acessou o notebook em conjunto, gerando um vídeo para explicar sobre a conexão;
 * Samanta ficou de atualizar o documento de API e a equipe de arquitetura ler antes da reunião obrigatória.
 
-## Reunião Backend 30/07 (quinta-feira)
+## Reunião 30/07 (quinta-feira)
 
 **Participantes:** Alan Anderson, Alex Furukawa, Kauã Barros, Lídia Moura & Samanta Sá (5/9)
 * Alex auxiliou Carlos com o GitHub;
@@ -120,3 +120,10 @@
 * Alan compartilhou transcrição de um dos cursos da Alura sobre conectar o front com o back;
 * Alex ressaltou a equipe de atualizar a documentação, principalmente nas incrementações futuras, pois por equanto foi feito por Lídia e este tópico apenas consta sobre o data science;
 * Ficou definido que se não for possível conectar da forma adequada, o frontend criará uma lógica isolada somente baseando nos parâmetros baseados no modelo treinado.
+
+## Reunião Arquitetura 31/07 (sexta-feira)
+
+**Participantes:** Alan Anderson, Alex Furukawa, Carlos Teixeira Lídia Moura & Samanta Sá (3/3 + ouvintes)
+* Equipe atualizou o contrato da API;
+* Geremos vídeos por IA para compreender a conexão das tecnologias;
+* Alex realizou a configuração do React.
