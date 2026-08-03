@@ -123,7 +123,17 @@
 
 ## Reunião Arquitetura 31/07 (sexta-feira)
 
-**Participantes:** Alan Anderson, Alex Furukawa, Carlos Teixeira Lídia Moura & Samanta Sá (3/3 + ouvintes)
+**Participantes:** Alan Anderson, Alex Furukawa, Carlos Teixeira, Lídia Moura & Samanta Sá (3/3 + ouvintes)
 * Equipe atualizou o contrato da API;
 * Geremos vídeos por IA para compreender a conexão das tecnologias;
 * Alex realizou a configuração do React.
+
+## Reunião 03/07 (segunda-feira)
+
+**Participantes:** Alan Anderson, Alex Furukawa, Carlos Teixeira, Kauã Barros, Lídia Moura & Samanta Sá (4/9)
+* Carlos criou no domingo a representação de cidades com slider do consumo energético e Alex comentou sobre a paleta de cores, hoje discutimos e a decisão será feita por uma enquete;
+* Kauã compartilhou que a página da alura atualizou e que podemos realizar os novos cursos;
+* Alex trouxe a pauta dos membros sem interação, pois ao falar com o suporte, a decisão é da equipe contar com tais membros como parte do projeto. Chegamos no acordo que mesmo que Pedro não interage por duas semanas, seu nome constará no projeto pois foi o responsável de criar o dataset. No caso de Mayara & Vitória, não iremos considerar sua participação;
+* Samanta explicou os três endpoints do projeto que logo serão implementados;
+* Alan enviou mensagem no servidor do Tech Advanced para solicitar acesso aos cursos anteriores para nos auxiliar com o projeto;
+* Debatemos sobre o uso do Docker e Alex compartilhou um artigo que pretende seguir para a configuração para o front;
