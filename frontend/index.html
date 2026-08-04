@@ -32,6 +32,8 @@
             defer
         ></script>
 
+        <script src="city.js" defer></script>
+
     </head>
 
     <body>
@@ -41,6 +43,86 @@
         
         <main>
             <h1>Projeto Powerpolis</h1>
+
+            <section class="city-section">
+
+                <div class="city-header">
+
+                    <h2>Simulação de Consumo Energético</h2>
+
+                    <p>
+                        Ajuste o consumo mensal da empresa e observe o impacto visual
+                        na cidade.
+                    </p>
+
+                </div>
+
+
+                <div class="city-container">
+
+                    <svg
+                        id="smart-city"
+                        viewBox="0 0 1200 500"
+                        preserveAspectRatio="xMidYMid meet"
+                    >
+
+                        <!-- Céu -->
+
+                        <rect
+                            width="1200"
+                            height="500"
+                            class="city-sky"
+                        />
+
+                        <!-- Solo -->
+
+                        <rect
+                            y="420"
+                            width="1200"
+                            height="80"
+                            class="city-ground"
+                        />
+
+                        <!-- Grupo onde ficarão os prédios -->
+
+                        <g id="buildings"></g>
+
+                    </svg>
+
+                </div>
+
+
+                <div class="energy-control">
+
+                    <label for="energySlider">
+
+                        Consumo Energético
+
+                    </label>
+
+                    <input
+
+                        type="range"
+
+                        id="energySlider"
+
+                        min="0"
+
+                        max="100"
+
+                        value="50"
+
+                    >
+
+                    <span id="energyValue">
+
+                        50%
+
+                    </span>
+
+                </div>
+
+            </section>
         </main>
 
         <footer>
