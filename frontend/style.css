@@ -9,7 +9,7 @@
     --cyber-cyan: #00E5FF;
     --electric-magenta: #FF00FF;
     --gilded-circuit: #FFD700;
-    --industrial-bronze: #8B4513;
+    --industrial-bronze: #aa6736;
     --quantum-void: #1A1A1A;
     --card-bg: #2a2a2a;
     --card-text: #d8d8d8;
@@ -37,7 +37,11 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px;
+  
+    border-bottom: 2px solid rgb(247, 247, 103);
+    
+    border-radius: 0px 0px 6px 6px;
+
 }
 
 body {
@@ -172,4 +176,131 @@ main {
 
 .member-links a:hover {
     color: var(--electric-magenta);
+}
+
+.fotos{
+
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    overflow: hidden;
+
+   border-radius:50%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background-color: #F5F5F5;
+
+    border: inset 4px #b36833;
+
+}
+
+.fotos img{
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+}
+
+.member-card h2{
+
+    color: #FFFFFF;
+
+    text-shadow: 2px 2px 6px #fef24a;
+
+}
+
+.member-card p{
+
+    color: #FFFFFF;
+
+    text-shadow: 2px 2px 6px #fef24a;
+
+}
+
+.member-links a{
+ 
+
+    text-shadow: 2px 2px 6px #678bf7;
+
+}
+
+.team-page h1{
+
+    color:#FFFFFF;
+
+    text-shadow:
+        1px -1px 0 #5b5b59,
+        2px -2px 0 #5b5959,
+        3px -3px 0 #5b5959,
+        4px -4px 0 #5b5959,
+        5px -5px 0 #5b5959,
+        0 0 12px rgba(46,184,114,.35);
+
+}
+
+footer{
+
+    background: #aa6736;
+
+    color: #343333;
+
+    width: 100%;
+
+    padding: 10px 5%;
+
+    text-align: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 12px;
+
+    border-top: 2px solid rgb(247, 247, 103);
+
+     
+    border-radius: 6px 6px 0px 0px;
+
+}
+
+
+.footer-social{
+
+    display: flex;
+
+    gap: 15px;
+
+}
+
+.footer-social a{
+
+    color: #67c4ec;
+
+    text-decoration: none;
+
+    font-size: 0.95rem;
+
+    text-shadow: 2px 2px 6px #678bf7;
+
+}
+
+.footer-copy{
+
+    font-size: .8rem;
+
+    color: #343333;
+
 }

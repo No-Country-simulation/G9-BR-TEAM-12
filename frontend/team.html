@@ -43,8 +43,11 @@
             <h1>Equipe Powerpolis</h1>
             <div class="team-list">
                 <div class="member-card">
+                    <div class="fotos">
+                        <img src="assets/samanta.jpg" alt="Samanta">
+                    </div>
                     <h2>Samanta Sá</h2>
-                    <p>Backend Developer · Scrum Master</p>
+                    <p class="team">Backend Developer · Scrum Master</p>
                     <div class="member-links">
                         <a href="https://github.com/engsamantasa" target="_blank">Github</a>
                         <a href="https://www.linkedin.com/in/engsamantasa/" target="_blank">LinkedIn</a>
@@ -52,6 +55,9 @@
                 </div>
 
                 <div class="member-card">
+                    <div class="fotos">
+                        <img src="assets/kaua.jpeg" alt="Kauã">
+                    </div>
                     <h2>Kauã da Silva Barros</h2>
                     <p>Backend Developer</p>
                     <div class="member-links">
@@ -60,6 +66,9 @@
                 </div>
 
                 <div class="member-card">
+                    <div class="fotos">
+                        <img src="assets/alan.jpeg" alt="Alan">
+                    </div>
                     <h2>Alan Anderson</h2>
                     <p>Backend Developer</p>
                     <div class="member-links">
@@ -74,6 +83,9 @@
                 </div>
 
                 <div class="member-card">
+                    <div class="fotos">
+                        <img src="assets/lidi.png" alt="Lídia">
+                    </div>
                     <h2>Lídia Moura</h2>
                     <p>Data Analyst · Líder</p>
                     <div class="member-links">
@@ -83,6 +95,9 @@
                 </div>
 
                 <div class="member-card">
+                    <div class="fotos">
+                        <img src="assets/alex.jpeg" alt="Alex Furakawa">
+                    </div>
                     <h2>Alex Furukawa</h2>
                     <p>Full Stack Developer</p>
                     <div class="member-links">
@@ -92,6 +107,9 @@
                 </div>
 
                 <div class="member-card">
+                    <div class="fotos">
+                        <img src="assets/Pedro Henrique.png" alt="Pedro Henrique">
+                    </div>
                     <h2>Pedro Henrique Rodrigues da Costa Tireli</h2>
                     <p>Data Scientist</p>
                     <div class="member-links">
@@ -106,6 +124,9 @@
                 </div>
 
                 <div class="member-card">
+                    <div class="fotos">
+                        <img src="assets/carlos.jpeg" alt="Antônio Carlos">
+                    </div>
                     <h2>Antônio Carlos Martins Teixeira</h2>
                     <p>Frontend Developer</p>
                     <div class="member-links">
@@ -116,16 +137,39 @@
             </div>
         </main>
 
+        <footer>
 
-    <script>
-    fetch('navbar.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('navbar-container').innerHTML = data;
-        })
-        .catch(error => console.error('Error loading the navbar:', error));
-    </script>
+            <div class="footer-logo">
+                <h2>Powerpolis</h2>
+                <p>Soluções inteligentes para gerenciamento energético.</p>
+            </div>
+
+            <div class="footer-social">
+
+                <a href="#">GitHub</a>
+              
+
+            </div>
+
+            <div class="footer-copy">
+
+                <p>© 2026 Powerpolis. Todos os direitos reservados.</p>
+
+            </div>
+
+        </footer>
+
+
+        <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading the navbar:', error));
+        </script>
     </body>
+
 
 
 
