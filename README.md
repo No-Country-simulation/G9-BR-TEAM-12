@@ -9,7 +9,7 @@
 
 ---
 
-## 📝 Descrição do Projeto
+## 📝 Descrição do Projeto.
 
 O objetivo deste projeto é criar uma solução inteligente capaz de analisar padrões de consumo de energia elétrica e gerar informações que auxiliem na tomada de decisões relacionadas à eficiência energética. 
 
@@ -73,7 +73,7 @@ A preocupação com a eficiência energética e sustentabilidade é uma demanda 
 
 ## Equipe 12
 
-* Samanta Sá | Backend Developer - Scrum Maser
+* Samanta Sá | Backend Developer - Scrum Master
 [Github](https://github.com/engsamantasa)
 [Linkedin](https://www.linkedin.com/in/engsamantasa/)
 
