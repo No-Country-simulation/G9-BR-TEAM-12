@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Projeto Powerpolis</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta
+            name="Projeto Powerpolis"
+            content="Projeto de avaliação de eficiência energética de empresas."
+        >
+
+        <link
+            rel="icon"
+            href="/src/assets/powerpolis-logo.png"
+            type="image/logo"
+        >
+
+        <link
+            rel="stylesheet"
+            href="/src/style.css"
+        >
+
+        </head>
+
+        <body>
+            <div id="root"></div>
+            <script type="module" src="/src/main.jsx"></script>
+        <header>     
+            <nav id="navbar-container"></nav>
+        </header>
+        
+        <main>
+            <h1>Projeto Powerpolis</h1>
+        </main>
+
+        <footer>
+
+            <div class="footer-logo">
+                <h2>Powerpolis</h2>
+                <p>Soluções inteligentes para gerenciamento energético.</p>
+            </div>
+
+            <div class="footer-social">
+
+                <a href="#">GitHub</a>
+                
+            </div>
+
+            <div class="footer-copy">
+
+                <p>© 2026 Powerpolis. Todos os direitos reservados.</p>
+
+            </div>
+
+        </footer>
+
+
+        <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading the navbar:', error));
+        </script>
+    </body>
+
+
+
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Projeto Powerpolis</title>
+
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <meta
+            name="Projeto Powerpolis"
+            content="Projeto de avaliação de eficiência energética de empresas."
+        >
+
+        <link
+            rel="icon"
+            href="/src/powerpolis-logo.png"
+            type="image/logo"
+        >
+
+        <link
+            rel="stylesheet"
+            href="/src/style.css"
+        >
+
+    </head>
+
+    <body>
+        <header>
+            <div id="navbar-container"></div>
+        </header>
+        
+        <main class="team-page">
+            <h1>Equipe Powerpolis</h1>
+            <div class="team-list">
+                <div class="member-card">
+                    <div class="fotos">
+                        <img src="/src/assets/samanta.jpg" alt="Samanta">
+                    </div>
+                    <h2>Samanta Sá</h2>
+                    <p class="team">Backend Developer · Scrum Master</p>
+                    <div class="member-links">
+                        <a href="https://github.com/engsamantasa" target="_blank">Github</a>
+                        <a href="https://www.linkedin.com/in/engsamantasa/" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <div class="fotos">
+                        <img src="/src/assets/kaua.jpeg" alt="Kauã">
+                    </div>
+                    <h2>Kauã da Silva Barros</h2>
+                    <p>Backend Developer</p>
+                    <div class="member-links">
+                        <a href="https://github.com/kaua3-c" target="_blank">Github</a>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <div class="fotos">
+                        <img src="/src/assets/alan.jpeg" alt="Alan">
+                    </div>
+                    <h2>Alan Anderson</h2>
+                    <p>Backend Developer</p>
+                    <div class="member-links">
+                        <a href="https://github.com/alanandersondev" target="_blank">Github</a>
+                        <a href="https://www.linkedin.com/in/alan-anderson-dev/" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <h2>Mayara Medeiros Giangiacomo</h2>
+                    <p>Backend Developer</p>
+                </div>
+
+                <div class="member-card">
+                    <div class="fotos">
+                        <img src="/src/assets/lidi.png" alt="Lídia">
+                    </div>
+                    <h2>Lídia Moura</h2>
+                    <p>Data Analyst · Líder</p>
+                    <div class="member-links">
+                        <a href="https://github.com/lidimoura" target="_blank">Github</a>
+                        <a href="https://www.linkedin.com/in/lidimoura/" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <div class="fotos">
+                        <img src="/src/assets/alex.jpeg" alt="Alex Furakawa">
+                    </div>
+                    <h2>Alex Furukawa</h2>
+                    <p>Full Stack Developer</p>
+                    <div class="member-links">
+                        <a href="https://github.com/dev-corvus/" target="_blank">Github</a>
+                        <a href="https://www.linkedin.com/in/lexkawa/" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <div class="fotos">
+                        <img src="/src/assets/Pedro Henrique.png" alt="Pedro Henrique">
+                    </div>
+                    <h2>Pedro Henrique Rodrigues da Costa Tireli</h2>
+                    <p>Data Scientist</p>
+                    <div class="member-links">
+                        <a href="https://github.com/phtirelli" target="_blank">Github</a>
+                        <a href="https://www.linkedin.com/in/phtirelli/" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <h2>Dryelli Vitória Martins de Freitas</h2>
+                    <p>Architect (Software / Solution Architect)</p>
+                </div>
+
+                <div class="member-card">
+                    <div class="fotos">
+                        <img src="/src/assets/carlos.jpeg" alt="Antônio Carlos">
+                    </div>
+                    <h2>Antônio Carlos Martins Teixeira</h2>
+                    <p>Frontend Developer</p>
+                    <div class="member-links">
+                        <a href="https://github.com/digichargeac" target="_blank">Github</a>
+                        <a href="https://www.linkedin.com/in/antonio-carlos-martins-teixeira" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+
+            <div class="footer-logo">
+                <h2>Powerpolis</h2>
+                <p>Soluções inteligentes para gerenciamento energético.</p>
+            </div>
+
+            <div class="footer-social">
+
+                <a href="#">GitHub</a>
+              
+
+            </div>
+
+            <div class="footer-copy">
+
+                <p>© 2026 Powerpolis. Todos os direitos reservados.</p>
+
+            </div>
+
+        </footer>
+
+
+        <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading the navbar:', error));
+        </script>
+    </body>
+
+
+
+
+</html>
