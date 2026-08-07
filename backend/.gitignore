@@ -1,0 +1,40 @@
+# ==================================
+# 1. Arquivos de Compilação (Maven / Java)
+# ==================================
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+
+# Log files
+*.log
+
+# ==================================
+# 2. Configurações da IDE (IntelliJ IDEA)
+# ==================================
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# Configurações do Eclipse (se alguém no time usar)
+.project
+.classpath
+.settings/
+
+# Configurações do VS Code (se alguém no time usar)
+.vscode/
+
+# ==================================
+# 3. Arquivos de Sistema Operacional
+# ==================================
+.DS_Store
+Thumbs.db
+
+# ==================================
+# 4. Arquivos Temporários de Execução
+# ==================================
+.mvn/

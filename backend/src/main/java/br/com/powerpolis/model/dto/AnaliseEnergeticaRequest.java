@@ -1,13 +1,17 @@
 package br.com.powerpolis.model.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.validation.constraints.*;
+import jakarta.validation.constraints.DecimalMax;
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import lombok.Data;
 
 /**
  * Corpo de entrada de POST /analise-energetica.
+ * Schema fixo pelo contrato-api.md v0.7. Apenas os 5 campos do edital.
  */
-
 
 @Data
 public class AnaliseEnergeticaRequest {
@@ -35,14 +39,4 @@ public class AnaliseEnergeticaRequest {
     @DecimalMin(value = "0.0", message = "horas_alto_consumo deve estar entre 0 e 24")
     @DecimalMax(value = "24.0", message = "horas_alto_consumo deve estar entre 0 e 24")
     private Double horasAltoConsumo;
-
-    @JsonProperty("temperatura")
-    @NotNull(message = "temperatura é obrigatória")
-    @DecimalMin(value = "15.0", message = "temperatura deve estar entre 15 e 35")
-    @DecimalMax(value = "35.0", message = "temperatura deve estar entre 15 e 35")
-    private Double temperatura;
-
-    @JsonProperty("ar_condicionado")
-    @NotNull(message = "ar_condicionado é obrigatório")
-    private Boolean arCondicionado;
 }

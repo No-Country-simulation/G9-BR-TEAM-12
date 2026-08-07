@@ -100,4 +100,48 @@
 * Debate sobre atribuições de backend & data science;
 * Definimos os tipos de imóveis para: residência, comércio e indústria;
 * Kauã compartilhou demo de equipes anteriores para definirmos o que o modelo preditivo deve apresentar e concluímos que poderia ser uma ideia simples, por exemplo, de acordo com o histórico de consumo do usuário, o modelo mostra a predição eficiente, moderado ou ineficiente para o mês seguinte;
+* Alex compartilhou a estrutura do front-end com o uso da paleta de cores definida e adicionou os nomes e links dos membros;
 * Uma reunião de arquitetura será realizada amanhã para esclarecer esses pontos. 
+
+## Reunião Arquitetura 28/07 (quarta-feita)
+
+**Participantes:** Alex Furukawa, Lídia Moura & Samanta Sá (3/3)
+* Lídia continua o data science sozinha, retreinando o modelo de Pedro;
+* Definimos as responsabilidades do backend e data science apontando a maior dificuldade da equipe: conectar as áreas no MVP;
+* Equipe de arquitetura acessou o notebook em conjunto, gerando um vídeo para explicar sobre a conexão;
+* Samanta ficou de atualizar o documento de API e a equipe de arquitetura ler antes da reunião obrigatória.
+
+## Reunião 30/07 (quinta-feira)
+
+**Participantes:** Alan Anderson, Alex Furukawa, Kauã Barros, Lídia Moura & Samanta Sá (5/9)
+* Alex auxiliou Carlos com o GitHub;
+* Alex criou o problem statement para adicionar no index;
+* Lídia aprensentou gráficos gerados pelo modelo já serializado, já podendo ser usado pelo backend, sem a necessidade de dados mockados;
+* Alan compartilhou transcrição de um dos cursos da Alura sobre conectar o front com o back;
+* Alex ressaltou a equipe de atualizar a documentação, principalmente nas incrementações futuras, pois por equanto foi feito por Lídia e este tópico apenas consta sobre o data science;
+* Ficou definido que se não for possível conectar da forma adequada, o frontend criará uma lógica isolada somente baseando nos parâmetros baseados no modelo treinado.
+
+## Reunião Arquitetura 31/07 (sexta-feira)
+
+**Participantes:** Alan Anderson, Alex Furukawa, Carlos Teixeira, Lídia Moura & Samanta Sá (3/3 + ouvintes)
+* Equipe atualizou o contrato da API;
+* Geremos vídeos por IA para compreender a conexão das tecnologias;
+* Alex realizou a configuração do React.
+
+**Participantes:** Alan Anderson, Alex Furukawa, Carlos Teixeira, Kauã Barros, Lídia Moura & Samanta Sá (5/9)
+* Carlos criou no domingo a representação de cidades com slider do consumo energético e Alex comentou sobre a paleta de cores, hoje discutimos e a decisão será feita por uma enquete;
+* Kauã compartilhou que a página da alura atualizou e que podemos realizar os novos cursos;
+* Alex trouxe a pauta dos membros sem interação, pois ao falar com o suporte, a decisão é da equipe contar com tais membros como parte do projeto. Chegamos no acordo que mesmo que Pedro não interage por duas semanas, seu nome constará no projeto pois foi o responsável de criar o dataset. No caso de Mayara & Vitória, não iremos considerar sua participação;
+* Samanta explicou os três endpoints do projeto que logo serão implementados;
+* Alan enviou mensagem no servidor do Tech Advanced para solicitar acesso aos cursos anteriores para nos auxiliar com o projeto;
+* Debatemos sobre o uso do Docker e Alex compartilhou um artigo que pretende seguir para a configuração para o front;
+
+## Reunião 06/07 (quinta-feira)
+
+**Participantes:** Alan Anderson, Alex Furukawa, Carlos Teixeira, Kauã Barros, Lídia Moura & Samanta Sá (5/9)
+* Alan avisou hoje antes da reunião que não poderia comparecer, mas entrou na reunião e não interagiu;
+* Confirmamos em configurar os serviços  da OCI essa semana e testar o Docker que Kauã configurou para o backend;
+* Carlos compartilhou a animação da cidade com a feature nova de árvores que alteram o estado de acordo com o consumo energético;
+* Alex configurou os principais componentes de React e tentará configurar o Docker do frontend com maior urgência para que Carlos não encontre dificuldades;
+* Amanhã iniciaremos a configuração e faremos a foto da equipe;
+* Lidi criou sobre as cores da animação da cidade Powerpolis, pois depois que Alex explicou, a equipe ficou em dúvida.
