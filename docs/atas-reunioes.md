@@ -128,12 +128,20 @@
 * Geremos vídeos por IA para compreender a conexão das tecnologias;
 * Alex realizou a configuração do React.
 
-## Reunião 03/07 (segunda-feira)
-
-**Participantes:** Alan Anderson, Alex Furukawa, Carlos Teixeira, Kauã Barros, Lídia Moura & Samanta Sá (4/9)
+**Participantes:** Alan Anderson, Alex Furukawa, Carlos Teixeira, Kauã Barros, Lídia Moura & Samanta Sá (5/9)
 * Carlos criou no domingo a representação de cidades com slider do consumo energético e Alex comentou sobre a paleta de cores, hoje discutimos e a decisão será feita por uma enquete;
 * Kauã compartilhou que a página da alura atualizou e que podemos realizar os novos cursos;
 * Alex trouxe a pauta dos membros sem interação, pois ao falar com o suporte, a decisão é da equipe contar com tais membros como parte do projeto. Chegamos no acordo que mesmo que Pedro não interage por duas semanas, seu nome constará no projeto pois foi o responsável de criar o dataset. No caso de Mayara & Vitória, não iremos considerar sua participação;
 * Samanta explicou os três endpoints do projeto que logo serão implementados;
 * Alan enviou mensagem no servidor do Tech Advanced para solicitar acesso aos cursos anteriores para nos auxiliar com o projeto;
 * Debatemos sobre o uso do Docker e Alex compartilhou um artigo que pretende seguir para a configuração para o front;
+
+## Reunião 06/07 (quinta-feira)
+
+**Participantes:** Alan Anderson, Alex Furukawa, Carlos Teixeira, Kauã Barros, Lídia Moura & Samanta Sá (5/9)
+* Alan avisou hoje antes da reunião que não poderia comparecer, mas entrou na reunião e não interagiu;
+* Confirmamos em configurar os serviços  da OCI essa semana e testar o Docker que Kauã configurou para o backend;
+* Carlos compartilhou a animação da cidade com a feature nova de árvores que alteram o estado de acordo com o consumo energético;
+* Alex configurou os principais componentes de React e tentará configurar o Docker do frontend com maior urgência para que Carlos não encontre dificuldades;
+* Amanhã iniciaremos a configuração e faremos a foto da equipe;
+* Lidi criou sobre as cores da animação da cidade Powerpolis, pois depois que Alex explicou, a equipe ficou em dúvida.
