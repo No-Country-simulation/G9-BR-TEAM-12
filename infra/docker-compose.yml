@@ -57,16 +57,28 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
     container_name: energiai-frontend
+    restart: always
     ports:
-      - "3000:80"
+      - "3000:3000"
+
+    volumes:
+     - ./frontend:/app
+     - /app/node_modules
     environment:
-      # URL pública do backend, usada pelo app React no navegador
-      - VITE_API_URL=http://localhost:8080
-    depends_on:
-      - backend
+     - VITE_APP_BACKEND_ADDRESS=http://localhost/api
     networks:
-      - energiai-net
-    restart: unless-stopped
+     - network
+networks:
+ network:
+     
+    # environment:
+    #   # URL pública do backend, usada pelo app React no navegador
+    #   - VITE_API_URL=http://localhost:8080
+    # depends_on:
+    #   - backend
+    # networks:
+    #   - energiai-net
+    # restart: unless-stopped
 
   # ---------------------------------------------------------
   # BANCO DE DADOS — opcional (só necessário se implementarem
@@ -85,10 +97,6 @@ services:
   #     - energiai-db-data:/var/lib/postgresql/data
   #   networks:
   #     - energiai-net
-
-networks:
-  energiai-net:
-    driver: bridge
 
 # volumes:
 #   energiai-db-data:
