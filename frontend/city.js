@@ -21,11 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     treesGroup.setAttribute("id", "trees");
 
-    // As árvores ficam atrás dos prédios
-    svg.insertBefore(
-        treesGroup,
-        buildingsGroup
-    );
+    // As árvores ficam na frente dos prédios
+    svg.appendChild(treesGroup);
 
     //----------------------------------------------------------
     // Configurações da cidade
@@ -603,43 +600,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function generateTrees(){
 
-        if(buildingPositions.length < 2){
+    trees.length = 0;
 
-            return;
+    treeLeaves.length = 0;
 
-        }
+    treesGroup.innerHTML = "";
 
-        for(let i = 0; i < buildingPositions.length - 1; i++){
+    const totalTrees = 10;
 
-            const current = buildingPositions[i];
+    const margin = 35;
 
-            const next = buildingPositions[i + 1];
+    const spacing = (CITY_WIDTH - margin * 2) / totalTrees;
 
-            const start = current.x + current.width;
+    for(let i=0;i<totalTrees;i++){
 
-            const end = next.x;
+        const x =
 
-            const space = end - start;
+            margin +
 
-            if(space < 20){
+            spacing*i +
 
-                continue;
+            randomBetween(-12,12);
 
-            }
-
-            const treeX =
-
-                start +
-
-                space / 2 +
-
-                randomBetween(-8,8);
-
-            createTree(treeX);
-
-        }
+        createTree(x);
 
     }
+
+}
 
     //----------------------------------------------------------
     // Número aleatório
@@ -740,34 +727,7 @@ function updateTrees(value){
         const leaves =
             document.querySelectorAll("#trees circle");
 
-        //------------------------------------------------------
-        // Quantidade de árvores visíveis
-        //------------------------------------------------------
-
-        const visibleTrees = Math.max(
-
-            1,
-
-            Math.round(
-
-                trees.length * (1 - value/100)
-
-            )
-
-        );
-
-        trees.forEach((tree,index)=>{
-
-            tree.style.display =
-
-                index < visibleTrees
-
-                    ? "block"
-
-                    : "none";
-
-        });
-
+        
         //------------------------------------------------------
         // Cor das folhas
         //------------------------------------------------------
