@@ -136,7 +136,7 @@
 * Alan enviou mensagem no servidor do Tech Advanced para solicitar acesso aos cursos anteriores para nos auxiliar com o projeto;
 * Debatemos sobre o uso do Docker e Alex compartilhou um artigo que pretende seguir para a configuração para o front;
 
-## Reunião 06/07 (quinta-feira)
+## Reunião 06/08 (quinta-feira)
 
 **Participantes:** Alan Anderson, Alex Furukawa, Carlos Teixeira, Kauã Barros, Lídia Moura & Samanta Sá (5/9)
 * Alan avisou hoje antes da reunião que não poderia comparecer, mas entrou na reunião e não interagiu;
@@ -145,3 +145,8 @@
 * Alex configurou os principais componentes de React e tentará configurar o Docker do frontend com maior urgência para que Carlos não encontre dificuldades;
 * Amanhã iniciaremos a configuração e faremos a foto da equipe;
 * Lidi criou sobre as cores da animação da cidade Powerpolis, pois depois que Alex explicou, a equipe ficou em dúvida.
+
+## Reunião 07/08 (sexta-feira)
+
+**Participantes:** Alan Anderson, Alex Furukawa, Carlos Teixeira, Kauã Barros, Lídia Moura & Samanta Sá (5/9)
+* teste 07/08
