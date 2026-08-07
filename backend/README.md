@@ -1,111 +1,109 @@
-# Hackathon ONE – Projetos G9 | Alura + Oracle 
+# Este arquivo tem como objetivo instruir a rodar e atualizar o Docker do backend 
+## Requisitos
 
-<p align="center">
-  <a href="https://alura-es-cursos.github.io/projetos-hackathon-g9-brasil/">
-    <img src="https://img.shields.io/badge/Acessar%20Página%20do%20Projeto-Clique%20Aqui-blue?style=for-the-badge&logo=github" alt="Link do Projeto">
-  </a>
-</p>
-
+- Docker Desktop instalado
+- WSL2 configurado (Windows)
 
 ---
 
-## 📝 Descrição do Projeto.
+## Construindo a imagem
 
-O objetivo deste projeto é criar uma solução inteligente capaz de analisar padrões de consumo de energia elétrica e gerar informações que auxiliem na tomada de decisões relacionadas à eficiência energética. 
+Dentro da pasta **backend**, execute:
 
-A aplicação recebe dados de consumo de uma residência ou pequeno estabelecimento (como consumo mensal em kWh, horários de pico, quantidade de equipamentos, etc.) e, utilizando técnicas de **Ciência de Dados**, identifica padrões e classifica o perfil energético em categorias:
-* **Eficiente**
-* **Moderado**
-* **Ineficiente**
-
-Além da classificação, o sistema fornece recomendações personalizadas para redução de desperdício, estima os impactos financeiros com base em uma tarifa de referência e disponibiliza os resultados via **API REST (JSON)**, utilizando a infraestrutura da **Oracle Cloud Infrastructure (OCI)**.
-
----
-
-## 🎯 Objetivo do Hackathon
-
-Desenvolver um **MVP (Minimum Viable Product)** funcional capaz de:
-1. Analisar padrões de consumo energético e classificar perfis de eficiência.
-2. Gerar recomendações práticas de melhoria.
-3. Estimar impactos financeiros com base em uma tarifa de referência.
-4. Disponibilizar os resultados por meio de uma API REST.
-5. Utilizar pelo menos um serviço **OCI** como parte integrante da arquitetura.
-
----
-
-## 💡 Necessidade do Cliente (Visão de Negócio)
-
-Muitas pessoas recebem contas de energia elevadas, mas possuem pouca visibilidade sobre quais hábitos e equipamentos mais impactam seus gastos. A solução visa transformar dados brutos em informações claras e úteis para apoiar decisões mais conscientes, permitindo ao usuário:
-* Entender seu perfil de consumo energético;
-* Identificar possíveis pontos de desperdício;
-* Receber recomendações de melhoria personalizadas;
-* Estimar custos associados ao consumo;
-* Acompanhar indicadores de eficiência ao longo do tempo.
-
----
-
-## 📈 Validação de Mercado
-
-A preocupação com a eficiência energética e sustentabilidade é uma demanda crescente para empresas, governos e consumidores. Soluções focadas neste nicho agregam valor direto ao:
-* Reduzir custos operacionais e residenciais;
-* Melhorar indicadores de sustentabilidade (ESG);
-* Incentivar o consumo consciente e monitorar padrões de utilização;
-* Apoiar estratégias robustas de eficiência energética.
-
----
-
-## ⚙️ Funcionalidades Obrigatórias (MVP)
-
-### Análise do Perfil Energético & Estimativa Financeira
-* **Endpoint:** `POST /analise-energetica`
-* **Tarifa de Referência Utilizada:** R$ 0,75 por kWh *(valor médio nacional recomendado)*
-
-#### 📥 Exemplo de Entrada (Payload):
-```json
-{
-  "consumo_kwh": 420,
-  "uso_horario_pico": true,
-  "quantidade_equipamentos": 10,
-  "tipo_imovel": "Casa",
-  "horas_alto_consumo": 8
-}
+```bash
+docker build -t backend-powerpolis .
 ```
 
-## Equipe 12
+---
 
-* Samanta Sá | Backend Developer - Scrum Maser
-[Github](https://github.com/engsamantasa)
-[Linkedin](https://www.linkedin.com/in/engsamantasa/)
+## Executando o container
 
-* Kauã da Silva Barros | Backend Developer
-[Github](https://github.com/kaua3-c)
+```bash
+docker run --name backend-powerpolis-container -p 9091:9091 backend-powerpolis
+```
 
-* Alan Anderson | Backend Developer 
-[Github](https://github.com/alanandersondev)
-[Linkedin](https://www.linkedin.com/in/alan-anderson-dev/)
+A aplicação ficará disponível em:
 
+```
+http://localhost:9091
+```
 
-* Mayara Medeiros Giangiacomo | Backend Developer
+---
 
+## Comandos úteis
 
-* Lídia Moura | Data analyst - Líder
-[Github](https://github.com/lidimoura)
-[Linkedin](https://www.linkedin.com/in/lidimoura/)
+### Ver containers em execução
 
+```bash
+docker ps
+```
 
-* Alex Furukawa | Full Stack Developer
-[Github](https://github.com/dev-corvus/)
-[Linkedin](https://www.linkedin.com/in/lexkawa/)
+### Ver todos os containers
 
+```bash
+docker ps -a
+```
 
-* Pedro Henrique Rodrigues da Costa Tireli | Data Scientist
-[Github](https://github.com/phtirelli)
-[Linkedin](https://www.linkedin.com/in/phtirelli/)
+### Visualizar logs
 
+```bash
+docker logs backend-powerpolis-container
+```
 
-* Dryelli Vitoria Martins de Freitas | Architect (Software / Solution Architect)
+### Iniciar um container existente
 
+```bash
+docker start backend-powerpolis-container
+```
 
-* Antônio Carlos Martins Teixeira | Frontend Developer
-[Github](https://github.com/digichargeac)
-[Linkedin](www.linkedin.com/in/antonio-carlos-martins-teixeira)
+### Parar o container
+
+```bash
+docker stop backend-powerpolis-container
+```
+
+### Remover o container
+
+```bash
+docker rm backend-powerpolis-container
+```
+
+---
+
+# Atualizando a aplicação após alterações no IntelliJ
+
+> **Importante:** O Docker não atualiza automaticamente quando o código é alterado no IntelliJ.
+
+Sempre que houver alterações no código Java, é necessário reconstruir a imagem e criar um novo container.
+
+### 1. Reconstruir a imagem
+
+```bash
+docker build -t backend-powerpolis .
+```
+
+### 2. Parar o container antigo
+
+```bash
+docker stop backend-powerpolis-container
+```
+
+### 3. Remover o container antigo
+
+```bash
+docker rm backend-powerpolis-container
+```
+
+### 4. Criar um novo container
+
+```bash
+docker run --name backend-powerpolis-container -p 9091:9091 backend-powerpolis
+```
+
+Após esses passos, o container utilizará a versão mais recente da aplicação.
+
+---
+
+## Observações
+
+- A aplicação utiliza a porta **9091**.
