@@ -1,0 +1,24 @@
+# Etapa de compilação (Build).
+# Utiliza uma imagem que já possui Java 21 e Maven instalados.
+# O AS builder funciona como um alias, para o docker entender onde ele precisara procurar o .jar
+FROM maven:3.9.16-eclipse-temurin-21 AS builder
+# Define "/app" como diretório de trabalho do container e todos os próximos comandos serão executados dentro dessa pasta.
+WORKDIR /app
+# O Copy . . esta copiando todos os arquivos do projeto para o diretório /app do container.
+COPY . .
+# O mvn clean package é para gerar e compilar o arquivo .jar, porém sem executar os testes unitarios, de integração, etc.
+RUN mvn clean package -DskipTests
+
+
+# Etapa de execução da aplicação
+
+# Utiliza uma imagem mais leve(JRE), contendo apenas o ambiente necessário para executar aplicações Java, caso usasse JDK    ele puxaria tudo.
+FROM eclipse-temurin:21-jre
+# Definindo o diretório onde a aplicação será executada.
+WORKDIR /app
+# Copiando somente o .jar gerado na etapa de compilação.
+COPY --from=builder /app/target/*.jar app.jar
+# EXPOSE informa qual é a porta que aplicação está rodando.
+EXPOSE 9091
+# Comando executado quando o container for iniciado.
+ENTRYPOINT ["java","-jar","app.jar"]
