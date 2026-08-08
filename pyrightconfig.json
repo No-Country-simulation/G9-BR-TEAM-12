@@ -1,0 +1,11 @@
+{
+    "venvPath": "data-science",
+    "venv": ".venv",
+    "pythonVersion": "3.11",
+    "executionEnvironments": [
+        {
+            "root": "data-science/src",
+            "extraPaths": ["../data-science/.venv/Lib/site-packages"]
+        }
+    ]
+}

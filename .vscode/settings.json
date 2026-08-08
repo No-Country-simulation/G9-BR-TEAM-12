@@ -1,0 +1,9 @@
+{
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.compile.nullAnalysis.mode": "automatic",
+    "python.defaultInterpreterPath": "${workspaceFolder}/data-science/.venv/Scripts/python.exe",
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/data-science/.venv/Lib/site-packages",
+        "c:/PROJETOS/G9-BR-TEAM-12/data-science/.venv/Lib/site-packages"
+    ]
+}
