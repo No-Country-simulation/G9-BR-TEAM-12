@@ -9,10 +9,10 @@ Endpoints disponíveis:
 """
 
 import os
-import joblib
-import pandas as pd
-from fastapi import FastAPI
-from pydantic import BaseModel
+import joblib  # type: ignore[import-not-found]
+import pandas as pd  # type: ignore[import-not-found]
+from fastapi import FastAPI  # type: ignore[import-not-found]
+from pydantic import BaseModel  # type: ignore[import-not-found]
 
 # Inicialização da aplicação FastAPI
 app = FastAPI(
