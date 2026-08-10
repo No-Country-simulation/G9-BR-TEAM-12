@@ -1,4 +1,4 @@
-package br.com.powerpolis.infra;
+package br.com.powerpolis.infra.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +19,13 @@ public class TratadorDeErros {
                 .body(erros.stream().map(DadosErroValidacao::new).toList());
     }
 
+    // 400 - Corpo da requisição não pôde ser lido/convertido (ex: tipo_imovel inválido)
+    @ExceptionHandler(org.springframework.http.converter.HttpMessageNotReadableException.class)
+    public ResponseEntity<?> tratarErroLeituraCorpo(org.springframework.http.converter.HttpMessageNotReadableException ex) {
+        String mensagem = (ex.getCause() != null) ? ex.getCause().getMessage() : ex.getMessage();
+        return ResponseEntity.badRequest().body(mensagem);
+    }
+
     // 503 - Serviço Python indisponível
     @ExceptionHandler(PythonServiceUnavailableException.class)
     public ResponseEntity<?> tratarErroServicoPython(
@@ -36,12 +43,6 @@ public class TratadorDeErros {
                 .status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body("Erro interno do servidor.");
     }
-
-    // TODO:
-    // Definir como tratar tipo_imovel inválido.
-    // Aguardando decisão da equipe de Data Science:
-    // - rejeitar com 400; ou
-    // - aceitar como categoria genérica.
 
     private record DadosErroValidacao(String campo, String mensagem) {
         public DadosErroValidacao(FieldError erro) {
