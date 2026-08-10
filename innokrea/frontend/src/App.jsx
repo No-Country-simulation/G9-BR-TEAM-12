@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom"
 import { ButtonCallToAction } from "./components/ButtonCallToAction"
 import NavBar from "./components/NavBar"
+import { SmartCity } from "./components/SmartCity"
 
 function HomePage() {
   return (
@@ -12,7 +13,7 @@ function HomePage() {
 }
 
 function ProductsPage() {
-  return <div style={{ padding: "40px" }}><h1>Nosso Produto</h1></div>
+  return <SmartCity />
 }
 
 // 1. New About Page

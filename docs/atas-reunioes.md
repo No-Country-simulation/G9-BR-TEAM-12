@@ -149,4 +149,5 @@
 ## Reunião 07/08 (sexta-feira)
 
 **Participantes:** Alan Anderson, Alex Furukawa, Carlos Teixeira, Kauã Barros, Lídia Moura & Samanta Sá (5/9)
+* Configuramos juntos o início da API;
 * teste 07/08

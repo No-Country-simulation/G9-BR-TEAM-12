@@ -304,3 +304,90 @@ footer{
     color: #343333;
 
 }
+
+.products-page {
+    padding: 2rem 1.5rem;
+    color: var(--luminous-citrine);
+    min-height: calc(100vh - 12vh);
+}
+
+.city-intro {
+    margin-bottom: 1.75rem;
+    max-width: 900px;
+}
+
+.city-intro h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 0.75rem;
+}
+
+.city-intro p {
+    color: #d8d8d8;
+    line-height: 1.6;
+    max-width: 720px;
+}
+
+.city-root {
+    width: 100%;
+}
+
+.smart-city-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background: rgba(12, 12, 12, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+.city-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.city-header h2,
+.city-header p {
+    color: var(--luminous-citrine);
+}
+
+.energy-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.energy-labels {
+    display: flex;
+    gap: 1rem;
+    color: #f3f3f3;
+    font-weight: 600;
+}
+
+.energy-slider {
+    width: 100%;
+    max-width: 420px;
+    accent-color: var(--cyber-cyan);
+}
+
+.smart-city-svg {
+    width: 100%;
+    min-height: 420px;
+    border-radius: 20px;
+    background: radial-gradient(circle at top, rgba(0, 229, 255, 0.06), transparent 40%),
+                radial-gradient(circle at 80% 20%, rgba(255, 0, 255, 0.08), transparent 30%),
+                linear-gradient(180deg, #080808 0%, #121212 100%);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.smart-city-svg .building rect {
+    shape-rendering: crispEdges;
+}
+
+.smart-city-svg .window {
+    mix-blend-mode: screen;
+}

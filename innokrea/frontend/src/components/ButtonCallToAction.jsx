@@ -1,13 +1,14 @@
 import { Button, HStack } from "@chakra-ui/react"
+import { Link } from "react-router-dom"
 
 export const ButtonCallToAction = () => {
   return (
     <HStack>
-      <a href="/products" target="_blank" rel="noopener noreferrer">
+      <Link to="/products">
         <Button variant="outline" colorScheme="yellow">
           Teste nosso Produto!
         </Button>
-      </a>
+      </Link>
     </HStack>
   )
 }
