@@ -1,0 +1,10 @@
+# Serviço web 
+fastapi==0.115.12
+uvicorn[standard]==0.30.6
+pydantic==2.8.2
+
+# Modelo - verificar depois se cada modelo está atualizado no modelo pkl também 
+scikit-learn==1.6.1
+pandas==2.2.2
+joblib==1.4.2
+numpy==1.26.4

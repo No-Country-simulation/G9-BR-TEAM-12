@@ -1,102 +1,68 @@
-version: "3.9"
-
-# EnergiAI — orquestração local dos 3 serviços + banco opcional
-# Suba tudo com: docker compose up --build
-# Suba só um serviço (ex: durante dev do backend): docker compose up backend
+# ==============================================================================
+# ARCHITECTURE: Aplicação Multi-Serviço (Backend + Model Service)
+# DESCRIÇÃO: Orquestração de containers para ambiente local/desenvolvimento.
+# ==============================================================================
 
 services:
 
-  # ---------------------------------------------------------
-  # BACKEND — Java + Spring Boot
-  # Endpoint obrigatório: POST /analise-energetica
-  # ---------------------------------------------------------
-  backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
-    container_name: energiai-backend
-    ports:
-      - "8080:8080"
-    environment:
-      # URL interna do serviço de IA — o backend chama esse endereço, não localhost
-      - MODEL_SERVICE_URL=http://data-science:8000
-      - SPRING_PROFILES_ACTIVE=docker
-      # Credenciais/config do serviço OCI escolhido (preencher quando definido)
-      - OCI_CONFIG_PATH=/run/secrets/oci_config
-    depends_on:
-      - data-science
-    networks:
-      - energiai-net
-    restart: unless-stopped
+  # ----------------------------------------------------------------------------
+  # Microserviço de Ciência de Dados / Machine Learning
+  # ----------------------------------------------------------------------------
+  model-service:
+    # Nome explícito para facilitar identificação e logs via 'docker ps'
+    container_name: app_model_service
 
-  # ---------------------------------------------------------
-  # DATA SCIENCE — Python (FastAPI expondo o modelo treinado)
-  # Recebe do backend os dados já validados, devolve categoria/probabilidade
-  # ---------------------------------------------------------
-  data-science:
+    # Caminho do contexto de build relativo a este arquivo docker-compose
     build:
-      context: ./data-science
+      context: ../data-science/app
       dockerfile: Dockerfile
-    container_name: energiai-model-service
+
+    # Mapeamento de portas: <Porta do Host>:<Porta do Container>
     ports:
       - "8000:8000"
-    volumes:
-      # modelo serializado (.pkl/.joblib) montado no container
-      - ./data-science/models:/app/models
-    environment:
-      - MODEL_PATH=/app/models/modelo_classificacao.pkl
+
+    # Isolamento de rede (utiliza a rede definida ao final do arquivo)
     networks:
-      - energiai-net
+      - app-network
+
+    # Reinicia o container automaticamente caso ocorra falha
     restart: unless-stopped
 
-  # ---------------------------------------------------------
-  # FRONTEND — React
-  # ---------------------------------------------------------
-  frontend:
+
+  # ----------------------------------------------------------------------------
+  # Aplicação Principal / Backend
+  # ----------------------------------------------------------------------------
+  backend:
+    container_name: app_backend
+
     build:
-      context: ./frontend
+      context: ../backend
       dockerfile: Dockerfile
-    container_name: energiai-frontend
-    restart: always
+
     ports:
-      - "3000:3000"
+      - "9091:9091"
 
-    volumes:
-     - ./frontend:/app
-     - /app/node_modules
+    # Variáveis de ambiente
+    # Nota: Usamos o nome do serviço 'model-service' como hostname interno do Docker
     environment:
-     - VITE_APP_BACKEND_ADDRESS=http://localhost/api
+      - MODEL_SERVICE_URL=http://model-service:8000
+      - NODE_ENV=development # Exemplo: Ajuste conforme sua stack (development/production)
+
+    # Ordem de inicialização: o backend aguardará a criação do model-service
+    depends_on:
+      - model-service
+
     networks:
-     - network
+      - app-network
+
+    restart: unless-stopped
+
+
+# ==============================================================================
+# NETWORKS (REDES)
+# Cria uma rede isolada do tipo bridge para que os serviços se comuniquem
+# pelo nome do serviço (DNS interno do Docker).
+# ==============================================================================
 networks:
- network:
-     
-    # environment:
-    #   # URL pública do backend, usada pelo app React no navegador
-    #   - VITE_API_URL=http://localhost:8080
-    # depends_on:
-    #   - backend
-    # networks:
-    #   - energiai-net
-    # restart: unless-stopped
-
-  # ---------------------------------------------------------
-  # BANCO DE DADOS — opcional (só necessário se implementarem
-  # "Histórico de análises", item opcional do edital)
-  # ---------------------------------------------------------
-  # postgres:
-  #   image: postgres:16-alpine
-  #   container_name: energiai-db
-  #   environment:
-  #     - POSTGRES_DB=energiai
-  #     - POSTGRES_USER=energiai
-  #     - POSTGRES_PASSWORD=changeme
-  #   ports:
-  #     - "5432:5432"
-  #   volumes:
-  #     - energiai-db-data:/var/lib/postgresql/data
-  #   networks:
-  #     - energiai-net
-
-# volumes:
-#   energiai-db-data:
+  app-network:
+    driver: bridge

@@ -1,0 +1,12 @@
+﻿{
+  "name": "powerpolis-monorepo",
+  "private": true,
+  "workspaces": [
+    "innokrea/frontend"
+  ],
+  "scripts": {
+    "dev:frontend": "npm --prefix innokrea/frontend run dev",
+    "build:frontend": "npm --prefix innokrea/frontend run build",
+    "lint:frontend": "npm --prefix innokrea/frontend run lint"
+  }
+}
