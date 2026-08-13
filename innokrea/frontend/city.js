@@ -768,147 +768,79 @@ function initializeEnergySystem(slider, label){
 
 /* ===================================================== */
 
-function updateEnergy(value){
+export function updateEnergy(value, category = null){
 
-    //----------------------------------------------------------
-// Atualiza as árvores
-//----------------------------------------------------------
-
-function updateTrees(value){
-
-        const trees =
-            document.querySelectorAll("#trees g");
+    function updateTrees(value, category){
 
         const leaves =
             document.querySelectorAll("#trees circle");
 
-        
-        //------------------------------------------------------
-        // Cor das folhas
-        //------------------------------------------------------
+        let startHex = "#2ECC71";
+        let endHex = "#6B4A2B";
 
-        const start = hexToRgb("#3CB043");
+        if (category === "Eficiente") {
+            startHex = "#00FF66";
+            endHex = "#2ECC71";
+        } else if (category === "Moderado") {
+            startHex = "#F39C12";
+            endHex = "#B7950B";
+        } else if (category === "Ineficiente") {
+            startHex = "#E74C3C";
+            endHex = "#512E5F";
+        }
 
-        const end = hexToRgb("#6B4A2B");
+        const start = hexToRgb(startHex);
+        const end = hexToRgb(endHex);
+        const factor = value / 100;
 
-        const factor = value/100;
-
-        const r = Math.round(
-
-            start.r +
-
-            (end.r-start.r)*factor
-
-        );
-
-        const g = Math.round(
-
-            start.g +
-
-            (end.g-start.g)*factor
-
-        );
-
-        const b = Math.round(
-
-            start.b +
-
-            (end.b-start.b)*factor
-
-        );
+        const r = Math.round(start.r + (end.r - start.r) * factor);
+        const g = Math.round(start.g + (end.g - start.g) * factor);
+        const b = Math.round(start.b + (end.b - start.b) * factor);
 
         const color = `rgb(${r},${g},${b})`;
 
-        leaves.forEach(leaf=>{
-
-            leaf.setAttribute(
-
-                "fill",
-
-                color
-
-            );
-
+        leaves.forEach(leaf => {
+            leaf.setAttribute("fill", color);
         });
 
     }
 
-    //---------------------------------------------
-    // Recupera todas as janelas
-    //---------------------------------------------
-
     const windows = document.querySelectorAll("#buildings rect.window");
 
-    //---------------------------------------------
-    // Cor principal
-    //---------------------------------------------
+    let color = calculateEnergyColor(value);
 
-    const color = calculateEnergyColor(value);
+    if (category === "Eficiente") {
+        color = "#00E5FF";
+    } else if (category === "Moderado") {
+        color = "#FFD700";
+    } else if (category === "Ineficiente") {
+        color = "#FF0055";
+    }
 
-    //---------------------------------------------
-    // Intensidade
-    //---------------------------------------------
-
-    const intensity = value/100;
-
-    //---------------------------------------------
-    // Quantidade de janelas ligadas
-    //---------------------------------------------
+    const intensity = value / 100;
 
     const activeWindows = Math.floor(
-
         windows.length * intensity
-
     );
-
-    //---------------------------------------------
-    // Embaralha as janelas
-    //---------------------------------------------
 
     const shuffled = [...windows];
 
-    shuffled.sort(()=>Math.random()-0.5);
+    shuffled.sort(() => Math.random() - 0.5);
 
-    //---------------------------------------------
-    // Primeiro apaga tudo
-    //---------------------------------------------
-
-    windows.forEach(win=>{
-
-        win.setAttribute(
-            "fill",
-            "#0B0B0B"
-        );
-
-        win.style.filter="none";
-
+    windows.forEach(win => {
+        win.setAttribute("fill", "#0B0B0B");
+        win.style.filter = "none";
     });
 
-    //---------------------------------------------
-    // Depois acende apenas parte delas
-    //---------------------------------------------
-
-    for(let i=0;i<activeWindows;i++){
-
-        shuffled[i].setAttribute(
-            "fill",
-            color
-        );
-
-        shuffled[i].style.filter=
-
-            "drop-shadow(0 0 "
-
-            +(2+intensity*10)
-
-            +"px "
-
-            +color+")";
-
+    for (let i = 0; i < activeWindows; i++) {
+        shuffled[i].setAttribute("fill", color);
+        shuffled[i].style.filter = "drop-shadow(0 0 " + (2 + intensity * 12) + "px " + color + ")";
     }
-    updateTrees(value);
+
+    updateTrees(value, category);
 
 }
+
 
 /* ===================================================== */
 
