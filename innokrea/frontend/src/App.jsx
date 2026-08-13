@@ -1,13 +1,93 @@
 import { Routes, Route } from "react-router-dom"
 import { ButtonCallToAction } from "./components/ButtonCallToAction"
 import NavBar from "./components/NavBar"
+import Footer from "./components/Footer"
 import { SmartCity } from "./components/SmartCity"
+
+import logoOn from "./assets/powerpolis-logo.png"
+import logoOff from "./assets/powerpolis-logo-off.png"
+
+import samantaImg from "./assets/samanta.jpg"
+import kauaImg from "./assets/kaua.jpeg"
+import alanImg from "./assets/alan.jpeg"
+import lidiImg from "./assets/lidi.png"
+import alexImg from "./assets/alex.jpeg"
+import pedroImg from "./assets/Pedro Henrique.png"
+import carlosImg from "./assets/carlos.jpeg"
+
+const teamMembers = [
+  {
+    name: "Samanta Sá",
+    role: "Backend Developer · Scrum Master",
+    image: samantaImg,
+    github: "https://github.com/engsamantasa",
+    linkedin: "https://www.linkedin.com/in/engsamantasa/"
+  },
+  {
+    name: "Kauã da Silva Barros",
+    role: "Backend Developer",
+    image: kauaImg,
+    github: "https://github.com/kaua3-c",
+    linkedin: "https://www.linkedin.com/in/kauabarros/"
+  },
+  {
+    name: "Alan Anderson",
+    role: "Backend Developer",
+    image: alanImg,
+    github: "https://github.com/alanandersondev",
+    linkedin: "https://www.linkedin.com/in/alan-anderson-dev/"
+  },
+  {
+    name: "Lídia Moura",
+    role: "Data Analyst · Líder",
+    image: lidiImg,
+    github: "https://github.com/lidimoura",
+    linkedin: "https://www.linkedin.com/in/lidimoura/"
+  },
+  {
+    name: "Alex Furukawa",
+    role: "Full Stack Developer",
+    image: alexImg,
+    github: "https://github.com/dev-corvus/",
+    linkedin: "https://www.linkedin.com/in/lexkawa/"
+  },
+  {
+    name: "Pedro Henrique Rodrigues da Costa Tireli",
+    role: "Data Scientist",
+    image: pedroImg,
+    github: "https://github.com/phtirelli",
+    linkedin: "https://www.linkedin.com/in/phtirelli/"
+  },
+  {
+    name: "Antônio Carlos Martins Teixeira",
+    role: "Frontend Developer",
+    image: carlosImg,
+    github: "https://github.com/digichargeac",
+    linkedin: "https://www.linkedin.com/in/antonio-carlos-martins-teixeira"
+  }
+]
 
 function HomePage() {
   return (
-    <div style={{ padding: "40px" }}>
-      <h1>Projeto Powerpolis</h1>
-      <ButtonCallToAction />
+    <div className="page-container">
+      <div className="hero-card">
+        <span className="badge">Eficiência Energética</span>
+        
+        <div className="hero-header-logo">
+          <span className="hero-prefix">Projeto</span>
+          <div className="blinking-logo-wrapper" title="Powerpolis Neon Sign">
+            <img src={logoOff} alt="Powerpolis Logo Base" className="logo-base" />
+            <img src={logoOn} alt="Powerpolis Logo Neon Glow" className="logo-neon-glow" />
+          </div>
+        </div>
+
+        <p className="hero-description">
+          Gerenciamento inteligente e simulação procedural para avaliação de eficiência energética em tempo real.
+        </p>
+        <div className="hero-actions">
+          <ButtonCallToAction />
+        </div>
+      </div>
     </div>
   )
 }
@@ -16,26 +96,63 @@ function ProductsPage() {
   return <SmartCity />
 }
 
-// 1. New About Page
 function AboutPage() {
-  return <div style={{ padding: "40px" }}><h1>Sobre o Powerpolis</h1></div>
+  return (
+    <div className="page-container">
+      <div className="content-card">
+        <h1>Sobre o Powerpolis</h1>
+        <p className="hero-description" style={{ marginTop: "1rem" }}>
+          O Powerpolis é uma plataforma focada em simulações interativas para gerenciamento e consumo consciente de energia em cidades inteligentes.
+        </p>
+      </div>
+    </div>
+  )
 }
 
-// 2. New Team Page
 function TeamPage() {
-  return <div style={{ padding: "40px" }}><h1>Nossa Equipe</h1></div>
+  return (
+    <div className="page-container team-page">
+      <h1>Equipe Powerpolis</h1>
+      <div className="team-list">
+        {teamMembers.map((member, index) => (
+          <div className="member-card" key={index}>
+            <div className="fotos">
+              <img src={member.image} alt={member.name} />
+            </div>
+            <h2>{member.name}</h2>
+            <p className="team-role">{member.role}</p>
+            <div className="member-links">
+              {member.github && (
+                <a href={member.github} target="_blank" rel="noreferrer">
+                  GitHub
+                </a>
+              )}
+              {member.linkedin && (
+                <a href={member.linkedin} target="_blank" rel="noreferrer">
+                  LinkedIn
+                </a>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
 }
 
 export default function App() {
   return (
-    <nav>
+    <div className="app-shell">
       <NavBar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/team" element={<TeamPage />} />
-        <Route path="/products" element={<ProductsPage />} />
-      </Routes>
-    </nav>
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/team" element={<TeamPage />} />
+          <Route path="/products" element={<ProductsPage />} />
+        </Routes>
+      </main>
+      <Footer />
+    </div>
   )
 }
