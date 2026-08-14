@@ -1,66 +1,60 @@
-# Hackathon ONE – Projetos G9 | Alura + Oracle 
+<div align="center">
 
-<p align="center">
-  <a href="https://alura-es-cursos.github.io/projetos-hackathon-g9-brasil/">
-    <img src="https://img.shields.io/badge/Acessar%20Página%20do%20Projeto-Clique%20Aqui-blue?style=for-the-badge&logo=github" alt="Link do Projeto">
-  </a>
-</p>
+# ⚡ Powerpolis — EnergiAI
 
+### Inteligência Artificial para Classificação de Eficiência Energética
 
----
+**Hackathon ONE G9 — Alura + Oracle**
 
-## 📝 Descrição do Projeto.
+<a href="https://alura-es-cursos.github.io/projetos-hackathon-g9-brasil/">
+  <img src="https://img.shields.io/badge/Ver%20Página%20do%20Desafio-Clique%20Aqui-blue?style=for-the-badge&logo=github" alt="Link do Desafio">
+</a>
 
-O objetivo deste projeto é criar uma solução inteligente capaz de analisar padrões de consumo de energia elétrica e gerar informações que auxiliem na tomada de decisões relacionadas à eficiência energética. 
+![Java](https://img.shields.io/badge/Java-21-orange?logo=openjdk&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.0-6DB33F?logo=springboot&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
+![Scikit-Learn](https://img.shields.io/badge/scikit--learn-Random%20Forest-F7931E?logo=scikitlearn&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black)
+![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
+![OCI](https://img.shields.io/badge/Oracle%20Cloud-F80000?logo=oracle&logoColor=white)
 
-A aplicação recebe dados de consumo de uma residência ou pequeno estabelecimento (como consumo mensal em kWh, horários de pico, quantidade de equipamentos, etc.) e, utilizando técnicas de **Ciência de Dados**, identifica padrões e classifica o perfil energético em categorias:
-* **Eficiente**
-* **Moderado**
-* **Ineficiente**
+🌐 Leia em outro idioma: <a href="docs/README.en.md">English</a> | <a href="docs/README.es.md">Español</a>
 
-Além da classificação, o sistema fornece recomendações personalizadas para redução de desperdício, estima os impactos financeiros com base em uma tarifa de referência e disponibiliza os resultados via **API REST (JSON)**, utilizando a infraestrutura da **Oracle Cloud Infrastructure (OCI)**.
-
----
-
-## 🎯 Objetivo do Hackathon
-
-Desenvolver um **MVP (Minimum Viable Product)** funcional capaz de:
-1. Analisar padrões de consumo energético e classificar perfis de eficiência.
-2. Gerar recomendações práticas de melhoria.
-3. Estimar impactos financeiros com base em uma tarifa de referência.
-4. Disponibilizar os resultados por meio de uma API REST.
-5. Utilizar pelo menos um serviço **OCI** como parte integrante da arquitetura.
+</div>
 
 ---
 
-## 💡 Necessidade do Cliente (Visão de Negócio)
+## 📝 Sobre o Projeto
 
-Muitas pessoas recebem contas de energia elevadas, mas possuem pouca visibilidade sobre quais hábitos e equipamentos mais impactam seus gastos. A solução visa transformar dados brutos em informações claras e úteis para apoiar decisões mais conscientes, permitindo ao usuário:
-* Entender seu perfil de consumo energético;
-* Identificar possíveis pontos de desperdício;
-* Receber recomendações de melhoria personalizadas;
-* Estimar custos associados ao consumo;
-* Acompanhar indicadores de eficiência ao longo do tempo.
+O **Powerpolis** é a solução da equipe **G9-BR-TEAM-12** para o desafio **EnergiAI**: uma aplicação que recebe dados de consumo energético de uma residência ou pequeno estabelecimento e, usando um modelo de Machine Learning treinado do zero pela equipe, classifica o perfil em **Eficiente, Moderado ou Ineficiente** — gerando recomendações personalizadas de otimização e uma estimativa de custo mensal, tudo entregue via **API REST**, com integração à **Oracle Cloud Infrastructure (OCI)**.
+
+Mais do que um MVP funcional, o projeto documenta cada decisão técnica tomada ao longo do caminho — dos critérios estatísticos de classificação até a arquitetura de comunicação entre os serviços — porque acreditamos que projeto bom se explica, não só funciona.
 
 ---
 
-## 📈 Validação de Mercado
+## 🎯 O Desafio
 
-A preocupação com a eficiência energética e sustentabilidade é uma demanda crescente para empresas, governos e consumidores. Soluções focadas neste nicho agregam valor direto ao:
-* Reduzir custos operacionais e residenciais;
-* Melhorar indicadores de sustentabilidade (ESG);
-* Incentivar o consumo consciente e monitorar padrões de utilização;
-* Apoiar estratégias robustas de eficiência energética.
+Desenvolver, em poucas semanas, um **MVP** funcional capaz de:
+
+1. Analisar padrões de consumo energético e classificar perfis de eficiência;
+2. Gerar recomendações práticas de melhoria;
+3. Estimar impactos financeiros com base em uma tarifa de referência;
+4. Disponibilizar os resultados por meio de uma API REST;
+5. Utilizar a infraestrutura da **OCI** como parte da arquitetura da solução.
+
+**A dor real por trás do desafio:** muitas pessoas recebem contas de energia elevadas, mas têm pouca visibilidade sobre quais hábitos e equipamentos mais pesam na conta. O Powerpolis existe para transformar dados brutos de consumo em decisões conscientes — entender o próprio perfil, identificar desperdício, receber recomendações e acompanhar a evolução ao longo do tempo.
 
 ---
 
-## ⚙️ Funcionalidades Obrigatórias (MVP)
+## ⚙️ Como Funciona
 
-### Análise do Perfil Energético & Estimativa Financeira
-* **Endpoint:** `POST /analise-energetica`
-* **Tarifa de Referência Utilizada:** R$ 0,75 por kWh *(valor médio nacional recomendado)*
+**Endpoint principal:**
+```
+POST /analise-energetica
+```
 
-#### 📥 Exemplo de Entrada (Payload):
+**Exemplo de entrada:**
 ```json
 {
   "consumo_kwh": 420,
@@ -71,41 +65,84 @@ A preocupação com a eficiência energética e sustentabilidade é uma demanda 
 }
 ```
 
-## Equipe 12
+**Exemplo de saída (validado contra o modelo real treinado):**
+```json
+{
+  "categoria": "Ineficiente",
+  "probabilidade": 0.5287,
+  "recomendacoes": [
+    "Alerta Vermelho! Auditoria energética completa necessária.",
+    "Substitua equipamentos antigos por modelos eficientes.",
+    "Implemente automação para controle de energia."
+  ],
+  "custo_estimado_mensal": 315.00
+}
+```
 
-* Samanta Sá | Backend Developer - Scrum Master
-[Github](https://github.com/engsamantasa)
-[Linkedin](https://www.linkedin.com/in/engsamantasa/)
+### Arquitetura
 
-* Kauã da Silva Barros | Backend Developer
-[Github](https://github.com/kaua3-c)
+| Camada | Tecnologia |
+|---|---|
+| Frontend | React |
+| Backend | Java 21 + Spring Boot — orquestra a requisição e expõe a API |
+| Serviço de IA | Python + FastAPI — encapsula o modelo treinado (`POST /predict`) |
+| Ciência de Dados | Python, Pandas, Scikit-Learn (Random Forest) |
+| Infraestrutura | Docker + Docker Compose · Oracle Cloud Infrastructure (OCI) |
 
-* Alan Anderson | Backend Developer 
-[Github](https://github.com/alanandersondev)
-[Linkedin](https://www.linkedin.com/in/alan-anderson-dev/)
+O Backend nunca reimplementa a inteligência do produto — toda classificação, recomendação e cálculo de custo é responsabilidade do serviço de IA, mantendo uma separação clara de responsabilidades entre as duas camadas.
 
+---
 
-* Mayara Medeiros Giangiacomo | Backend Developer
+## 🔍 Destaques Técnicos
 
+- **Modelo treinado do zero:** Random Forest com features de interação, **61,94% de acurácia** no conjunto de teste, comparado formalmente contra Regressão Logística e Árvore de Decisão antes da escolha final.
+- **Critério de classificação com justificativa estatística:** os limiares de Eficiente/Moderado/Ineficiente são calculados por quartil de consumo, **dentro de cada tipo de imóvel** — evitando comparar uma indústria com um apartamento na mesma régua.
+- **Dataset simulado com rigor:** 50.000 registros gerados de forma determinística (seed fixa), com decisões de escopo documentadas — inclusive a exclusão consciente de variáveis de clima, para manter a API aderente ao edital.
+- **4 serviços OCI integrados por decisão de arquitetura:** Object Storage, Autonomous Database, API Gateway e Vault.
+- **Ambiente containerizado e validado de ponta a ponta:** Backend e serviço de IA sobem juntos via Docker Compose e se comunicam de verdade — testado com chamadas reais, não apenas os containers subindo sem erro.
 
-* Lídia Moura | Data analyst - Líder
-[Github](https://github.com/lidimoura)
-[Linkedin](https://www.linkedin.com/in/lidimoura/)
+---
 
+## 👥 Equipe — G9-BR-TEAM-12
 
-* Alex Furukawa | Full Stack Developer
-[Github](https://github.com/dev-corvus/)
-[Linkedin](https://www.linkedin.com/in/lexkawa/)
+| Integrante | Papel | Links |
+|---|---|---|
+| **Lídia Moura** | Data Analyst · Líder do time | [LinkedIn](https://www.linkedin.com/in/lidimoura/) · [GitHub](https://github.com/lidimoura) |
+| **Pedro Henrique Tireli** | Data Scientist | [LinkedIn](https://www.linkedin.com/in/phtirelli/) · [GitHub](https://github.com/phtirelli) |
+| **Samanta Sá** | Backend Developer · Scrum Master | [LinkedIn](https://www.linkedin.com/in/engsamantasa/) · [GitHub](https://github.com/engsamantasa) |
+| **Alan Anderson** | Backend Developer | [LinkedIn](https://www.linkedin.com/in/alan-anderson-dev/) · [GitHub](https://github.com/alanandersondev) |
+| **Kauã da Silva Barros** | Backend Developer | [GitHub](https://github.com/kaua3-c) |
+| **Alex Furukawa** | Full Stack Developer | [LinkedIn](https://www.linkedin.com/in/lexkawa/) · [GitHub](https://github.com/dev-corvus/) |
+| **Antônio Carlos Martins Teixeira** | Frontend Developer | [LinkedIn](https://www.linkedin.com/in/antonio-carlos-martins-teixeira) · [GitHub](https://github.com/digichargeac) |
 
+A equipe circula entre áreas: o trio **Lídia, Samanta e Alex** conduz as decisões de arquitetura; **Alan** apoia o front-end quando necessário; **Alex**, como full stack, também reforça o backend. Essa colaboração cruzada ajudou o time a manter o ritmo mesmo com agendas distintas ao longo das 5 semanas de hackathon.
 
-* Pedro Henrique Rodrigues da Costa Tireli | Data Scientist
-[Github](https://github.com/phtirelli)
-[Linkedin](https://www.linkedin.com/in/phtirelli/)
+---
 
+## 💼 Modelo de Negócio e Aplicação de Mercado
 
-* Dryelli Vitoria Martins de Freitas | Architect (Software / Solution Architect)
+> **Direção estratégica — ainda não implementada, faz parte da visão de produto para as próximas fases.**
 
+Além do uso direto pelo consumidor final, o Powerpolis abre uma segunda frente de valor: perfis classificados como **Moderado** ou **Ineficiente** representam justamente o público com maior potencial de economia ao migrar para energia solar — tornando a classificação, por si só, um mecanismo natural de **qualificação de leads** para empresas do setor de energia solar. A equipe já validou essa direção como próximo passo de produto, com potencial de gerar valor tanto para o usuário final (economia) quanto para parceiros comerciais (leads qualificados por dado real de consumo, não por formulário genérico).
 
-* Antônio Carlos Martins Teixeira | Frontend Developer
-[Github](https://github.com/digichargeac)
-[Linkedin](www.linkedin.com/in/antonio-carlos-martins-teixeira)
+---
+
+## 🗺️ Roadmap Pós-Hackathon
+
+**Ciência de Dados:** migração para dataset com dados reais (fontes públicas como UCI Household Power Consumption e IEEE DataPort), pipeline de produção via `sklearn.Pipeline`, retreinamento periódico do modelo, avaliação de Gradient Boosting (XGBoost/LightGBM) e dashboard de BI para acompanhamento das predições.
+
+**Produto:** login e histórico de consumo do usuário com gráficos de evolução, e integração com dispositivos de casas inteligentes (IoT) para leitura automática de consumo.
+
+---
+
+## 📌 Transparência
+
+Partes do desenvolvimento e organização do notebook de Ciência de Dados contaram com apoio de ferramentas de IA (Gemini, integrado ao Google Colab) para organização, formatação e auditoria de consistência. Todas as decisões técnicas — critérios de classificação, escolha de features e configuração final do modelo — foram definidas e validadas pela equipe.
+
+---
+
+<div align="center">
+
+**[Hackathon ONE G9 — Alura + Oracle](https://alura-es-cursos.github.io/projetos-hackathon-g9-brasil/)**
+
+</div>
