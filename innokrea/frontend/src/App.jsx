@@ -15,6 +15,10 @@ import alexImg from "./assets/alex.jpeg"
 import pedroImg from "./assets/Pedro Henrique.png"
 import carlosImg from "./assets/carlos.jpeg"
 
+import githubIcon from "./assets/github-icon.png"
+import linkedinIcon from "./assets/linkedin-icon.png"
+
+
 const teamMembers = [
   {
     name: "Samanta Sá",
@@ -72,7 +76,7 @@ function HomePage() {
     <div className="page-container">
       <div className="hero-card">
         <span className="badge">Eficiência Energética</span>
-        
+
         <div className="hero-header-logo">
           <span className="hero-prefix">Projeto</span>
           <div className="blinking-logo-wrapper" title="Powerpolis Neon Sign">
@@ -82,7 +86,7 @@ function HomePage() {
         </div>
 
         <p className="hero-description">
-          Gerenciamento inteligente e simulação procedural para avaliação de eficiência energética em tempo real.
+          A EnergiAI ajuda clientes sustentáveis a analisar o consumo de energia através do projeto Powerpolis categorizando a eficiência energética, descobrindo a fonte dos gastos mensais que será tratada de forma preditiva e assertiva com o uso de inteligência artificial
         </p>
         <div className="hero-actions">
           <ButtonCallToAction />
@@ -124,12 +128,12 @@ function TeamPage() {
             <div className="member-links">
               {member.github && (
                 <a href={member.github} target="_blank" rel="noreferrer">
-                  GitHub
+                  <img src={githubIcon} alt="GitHub" className="social-icon" />
                 </a>
               )}
               {member.linkedin && (
                 <a href={member.linkedin} target="_blank" rel="noreferrer">
-                  LinkedIn
+                  <img src={linkedinIcon} alt="LinkedIn" className="social-icon" />
                 </a>
               )}
             </div>

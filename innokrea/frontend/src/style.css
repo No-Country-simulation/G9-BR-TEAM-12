@@ -463,6 +463,19 @@ h1 {
     text-shadow: 0 0 10px var(--magenta-glow);
 }
 
+.social-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 6px var(--cyber-cyan));
+}
+
+
 /* ==========================================================================
    PRODUCTS & SMART CITY PROCEDURAL CANVAS
    ========================================================================== */
