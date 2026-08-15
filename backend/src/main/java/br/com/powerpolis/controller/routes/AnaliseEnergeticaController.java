@@ -24,7 +24,10 @@ public class AnaliseEnergeticaController {
     @PostMapping("/analise-energetica")
     public ResponseEntity<AnaliseEnergeticaResponse> analisar(
             @Valid @RequestBody AnaliseEnergeticaRequest request) {
+        System.out.println(request);
         return ResponseEntity.ok(service.analisar(request));
+
+
     }
 
     // Consulta o histórico no Autonomous Database — implementação pendente.
