@@ -79,7 +79,7 @@ export function SmartCity() {
     }
 
     try {
-      const response = await fetch("http://localhost:8000/predict", {
+      const response = await fetch("http://localhost:9091/analise-energetica", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
@@ -153,8 +153,8 @@ export function SmartCity() {
               className="ai-input"
             >
               <option value="Comercial">Comercial</option>
-              <option value="Industrial">Industrial</option>
-              <option value="Residencial">Residencial</option>
+              <option value="Industria">Industrial</option>
+              <option value="Residencia">Residencial</option>
             </select>
           </div>
 

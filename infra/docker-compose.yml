@@ -58,6 +58,28 @@ services:
     restart: unless-stopped
 
 
+# ----------------------------------------------------------------------------
+  # Aplicação Frontend / React + Vite + Nginx
+  # ----------------------------------------------------------------------------
+  frontend:
+    container_name: app_frontend
+
+    build:
+      context: ../innokrea/frontend
+      dockerfile: Dockerfile
+      args:
+        VITE_APP_BACKEND_ADDRESS: http://localhost:9091
+
+    ports:
+      - "3000:3000"
+
+    depends_on:
+      - backend
+
+    networks:
+      - app-network
+
+    restart: unless-stopped
 # ==============================================================================
 # NETWORKS (REDES)
 # Cria uma rede isolada do tipo bridge para que os serviços se comuniquem
