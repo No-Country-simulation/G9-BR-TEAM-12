@@ -111,7 +111,7 @@ The Backend never reimplements the product's intelligence — all classification
 | **Pedro Henrique Tireli** | Data Scientist | [LinkedIn](https://www.linkedin.com/in/phtirelli/) · [GitHub](https://github.com/phtirelli) |
 | **Samanta Sá** | Backend Developer · Scrum Master | [LinkedIn](https://www.linkedin.com/in/engsamantasa/) · [GitHub](https://github.com/engsamantasa) |
 | **Alan Anderson** | Backend Developer | [LinkedIn](https://www.linkedin.com/in/alan-anderson-dev/) · [GitHub](https://github.com/alanandersondev) |
-| **Kauã da Silva Barros** | Backend Developer | [GitHub](https://github.com/kaua3-c) |
+| **Kauã da Silva Barros** | Backend Developer | [GitHub](https://github.com/kaua3-c) · [Linkedin](https://www.linkedin.com/in/kauabarros/) |
 | **Alex Furukawa** | Full Stack Developer | [LinkedIn](https://www.linkedin.com/in/lexkawa/) · [GitHub](https://github.com/dev-corvus/) |
 | **Antônio Carlos Martins Teixeira** | Frontend Developer | [LinkedIn](https://www.linkedin.com/in/antonio-carlos-martins-teixeira) · [GitHub](https://github.com/digichargeac) |
 
