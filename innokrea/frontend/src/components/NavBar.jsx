@@ -1,4 +1,5 @@
 import { Link, useLocation } from "react-router-dom"
+import logo from "../assets/powerpolis-logo.png"
 
 export default function NavBar() {
   const location = useLocation()
@@ -7,8 +8,8 @@ export default function NavBar() {
     <header className="navbar-header">
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
-          <img src="/powerpolis-logo.svg" alt="Powerpolis Logo" className="logo-img" />
-          <span className="logo-text">POWERPOLIS</span>
+          <img src={logo} alt="Powerpolis Logo" className="logo-img" />
+          <span className="logo-text">EnergiAI</span>
         </Link>
 
         <nav className="nav-links">
