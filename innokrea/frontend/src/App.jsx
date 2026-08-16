@@ -7,13 +7,13 @@ import { SmartCity } from "./components/SmartCity"
 import logoOn from "./assets/powerpolis-logo.png"
 import logoOff from "./assets/powerpolis-logo-off.png"
 
-import samantaImg from "./assets/samanta.jpg"
-import kauaImg from "./assets/kaua.jpeg"
 import alanImg from "./assets/alan.jpeg"
-import lidiImg from "./assets/lidi.png"
 import alexImg from "./assets/alex.jpeg"
-import pedroImg from "./assets/Pedro Henrique.png"
 import carlosImg from "./assets/carlos.jpeg"
+import kauaImg from "./assets/kaua.jpeg"
+import lidiImg from "./assets/lidi.png"
+import pedroImg from "./assets/Pedro Henrique.png"
+import samantaImg from "./assets/samanta.jpg"
 
 import githubIcon from "./assets/github-icon.png"
 import linkedinIcon from "./assets/linkedin-icon.png"
@@ -21,32 +21,11 @@ import linkedinIcon from "./assets/linkedin-icon.png"
 
 const teamMembers = [
   {
-    name: "Samanta Sá",
-    role: "Backend Developer · Scrum Master",
-    image: samantaImg,
-    github: "https://github.com/engsamantasa",
-    linkedin: "https://www.linkedin.com/in/engsamantasa/"
-  },
-  {
-    name: "Kauã da Silva Barros",
-    role: "Backend Developer",
-    image: kauaImg,
-    github: "https://github.com/kaua3-c",
-    linkedin: "https://www.linkedin.com/in/kauabarros/"
-  },
-  {
     name: "Alan Anderson",
     role: "Backend Developer",
     image: alanImg,
     github: "https://github.com/alanandersondev",
     linkedin: "https://www.linkedin.com/in/alan-anderson-dev/"
-  },
-  {
-    name: "Lídia Moura",
-    role: "Data Analyst · Líder",
-    image: lidiImg,
-    github: "https://github.com/lidimoura",
-    linkedin: "https://www.linkedin.com/in/lidimoura/"
   },
   {
     name: "Alex Furukawa",
@@ -56,6 +35,27 @@ const teamMembers = [
     linkedin: "https://www.linkedin.com/in/lexkawa/"
   },
   {
+    name: "Antônio Carlos Martins Teixeira",
+    role: "Frontend Developer",
+    image: carlosImg,
+    github: "https://github.com/digichargeac",
+    linkedin: "https://www.linkedin.com/in/antonio-carlos-martins-teixeira"
+  },
+  {
+    name: "Kauã da Silva Barros",
+    role: "Backend Developer",
+    image: kauaImg,
+    github: "https://github.com/kaua3-c",
+    linkedin: "https://www.linkedin.com/in/kauabarros/"
+  },
+  {
+    name: "Lídia Moura",
+    role: "Data Analyst · Líder",
+    image: lidiImg,
+    github: "https://github.com/lidimoura",
+    linkedin: "https://www.linkedin.com/in/lidimoura/"
+  },
+  {
     name: "Pedro Henrique Rodrigues da Costa Tireli",
     role: "Data Scientist",
     image: pedroImg,
@@ -63,11 +63,11 @@ const teamMembers = [
     linkedin: "https://www.linkedin.com/in/phtirelli/"
   },
   {
-    name: "Antônio Carlos Martins Teixeira",
-    role: "Frontend Developer",
-    image: carlosImg,
-    github: "https://github.com/digichargeac",
-    linkedin: "https://www.linkedin.com/in/antonio-carlos-martins-teixeira"
+    name: "Samanta Sá",
+    role: "Backend Developer · Scrum Master",
+    image: samantaImg,
+    github: "https://github.com/engsamantasa",
+    linkedin: "https://www.linkedin.com/in/engsamantasa/"
   }
 ]
 
