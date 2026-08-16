@@ -21,6 +21,11 @@ services:
     ports:
       - "8000:8000"
 
+    # Variáveis de ambiente para o model_loader
+    environment:
+      - MODEL_SOURCE=local
+      - MODEL_LOCAL_PATH=models/modelo_energiai_v1.pkl
+
     # Isolamento de rede (utiliza a rede definida ao final do arquivo)
     networks:
       - app-network

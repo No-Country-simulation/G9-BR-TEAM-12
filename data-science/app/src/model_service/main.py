@@ -8,22 +8,51 @@ Endpoints disponíveis:
                    recomendações personalizadas e custo mensal estimado.
 """
 
-import os
-import joblib  # type: ignore[import-not-found]
+import logging
+from contextlib import asynccontextmanager
+
 import pandas as pd  # type: ignore[import-not-found]
-from fastapi import FastAPI  # type: ignore[import-not-found]
+from fastapi import FastAPI, Request  # type: ignore[import-not-found]
 from pydantic import BaseModel  # type: ignore[import-not-found]
+
+from src.model_service.model_loader import load_model
+
+logger = logging.getLogger("model_service")
+
+
+# ---------------------------------------------------------------------------
+# Lifespan — carrega o modelo UMA vez no startup e o mantém em memória
+# ---------------------------------------------------------------------------
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """
+    Gerenciador de ciclo de vida da aplicação (substitui @app.on_event).
+    Carrega o modelo no startup e o disponibiliza em app.state.modelo.
+    """
+    try:
+        app.state.modelo = load_model()
+        logger.info("[OK] Modelo de IA carregado e pronto para servir predições.")
+    except Exception as e:
+        logger.warning(
+            "[AVISO] Falha ao carregar modelo: %s. "
+            "O serviço funcionará no modo FALLBACK (predição fixa).",
+            e,
+        )
+        app.state.modelo = None
+
+    yield  # A aplicação roda aqui
+
+    # Shutdown — limpeza (se necessário no futuro)
+    logger.info("Serviço encerrado.")
+
 
 # Inicialização da aplicação FastAPI
 app = FastAPI(
     title="Powerpolis - Serviço de IA (EnergiAI)",
     description="API de predição de eficiência energética baseada no modelo scikit-learn treinado.",
-    version="1.0.0"
+    version="1.0.0",
+    lifespan=lifespan,
 )
-
-# Caminho do modelo serializado (.pkl)
-# Aceita a variável de ambiente MODEL_PATH ou usa caminhos padrão locais
-MODEL_PATH = os.getenv("MODEL_PATH", "models/modelo_energiai_v1.pkl")
 
 # Tarifa de referência padrão padronizada (R$ 0,75 / kWh) conforme edital EnergiAI
 TARIFA_KWH = 0.75
@@ -54,9 +83,6 @@ RECOMENDACOES_POR_CATEGORIA = {
     ]
 }
 
-# Variável global privada para armazenar o modelo em memória
-_modelo = None
-
 
 # DTO (Data Transfer Object) de entrada: validação de dados via Pydantic
 class AnaliseInput(BaseModel):
@@ -73,36 +99,6 @@ class AnalisePrediction(BaseModel):
     probabilidade: float
     recomendacoes: list[str]
     custo_estimado_mensal: float
-
-
-@app.on_event("startup")
-def carregar_modelo() -> None:
-    """
-    Roda automaticamente quando a API é iniciada.
-    Carrega o modelo do arquivo .pkl para a memória global apenas UMA vez,
-    garantindo respostas ultra-rápidas a cada requisição HTTP.
-    """
-    global _modelo
-
-    # Tenta carregar no caminho configurado ou em caminhos alternativos conhecidos
-    caminhos_para_testar = [
-        MODEL_PATH,
-        "models/modelo_energiai_v1.pkl",
-        "../models/modelo_energiai_v1.pkl",
-        "app/models/modelo_energiai_v1.pkl",
-    ]
-
-    for caminho in caminhos_para_testar:
-        if os.path.exists(caminho):
-            try:
-                _modelo = joblib.load(caminho)
-                print(f"[OK] Modelo de IA carregado com sucesso a partir de: {caminho}")
-                return
-            except Exception as e:
-                print(f"[AVISO] Erro ao carregar modelo em {caminho}: {e}")
-
-    print("[AVISO] Nenhum arquivo de modelo .pkl foi encontrado. O serviço funcionará no modo FALLBACK (predição fixa).")
-    _modelo = None
 
 
 def _montar_features(dados: AnaliseInput) -> pd.DataFrame:
@@ -151,24 +147,25 @@ def _calcular_custo(consumo_kwh: float) -> float:
 
 
 @app.post("/predict", response_model=AnalisePrediction)
-def predict(dados: AnaliseInput) -> AnalisePrediction:
+def predict(request: Request, dados: AnaliseInput) -> AnalisePrediction:
     """
     Endpoint principal acionado pelo Backend Java.
     Recebe os dados de consumo, executa o modelo e retorna a análise energética completa.
     """
     custo = _calcular_custo(dados.consumo_kwh)
+    modelo = request.app.state.modelo
 
-    if _modelo is None:
+    if modelo is None:
         # Fallback de segurança: evita que falhas de arquivo travem a integração
         categoria = "Ineficiente"
         probabilidade = 0.50
     else:
         features = _montar_features(dados)
-        predicao_num = _modelo.predict(features)[0]
+        predicao_num = modelo.predict(features)[0]
         categoria = LABELS.get(int(predicao_num), "Ineficiente")
 
         # Probabilidade associada à classe prevista
-        probabilidades_todas = _modelo.predict_proba(features)[0]
+        probabilidades_todas = modelo.predict_proba(features)[0]
         probabilidade = float(max(probabilidades_todas))
 
     recomendacoes = RECOMENDACOES_POR_CATEGORIA.get(categoria, RECOMENDACOES_POR_CATEGORIA["Ineficiente"])
@@ -182,9 +179,9 @@ def predict(dados: AnaliseInput) -> AnalisePrediction:
 
 
 @app.get("/health")
-def health() -> dict:
+def health(request: Request) -> dict:
     """Endpoint de diagnóstico de saúde do serviço."""
     return {
         "status": "ok",
-        "modelo_carregado": _modelo is not None
+        "modelo_carregado": request.app.state.modelo is not None
     }

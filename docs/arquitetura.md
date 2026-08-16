@@ -44,9 +44,9 @@ O Powerpolis recebe dados de consumo de energia de uma residência ou pequeno es
     - Retorna categoria + probabilidade + recomendacoes + custo_estimado_mensal
             │
             ▼
-[Modelo armazenado em: OCI Object Storage]   ← produção/cloud (hoje, copiado
-                                                 para dentro da imagem Docker
-                                                 em build time — ver seção 6)
+[Modelo armazenado em: OCI Object Storage]   ← integração funcional via model_loader.py
+                                                  (MODEL_SOURCE=oci testado localmente;
+                                                  Docker Compose mantém cópia local — ver seção 6)
 
 Backend repassa a resposta completa do serviço de IA ao Frontend,
 através do API Gateway (em produção) ou diretamente (em ambiente local).
@@ -82,7 +82,7 @@ através do API Gateway (em produção) ou diretamente (em ambiente local).
 6. Backend grava o registro da análise no OCI Autonomous Database (histórico — ainda pendente de implementar).
 7. Backend responde ao Frontend, repassando integralmente o que o serviço de IA retornou.
 
-> ✅ Os passos 1, 2, 4, 5 e 7 já foram validados de verdade, localmente, via Docker Compose (ver seção 6). Os passos 3 e 6 (OCI Vault e Autonomous Database) ainda dependem da configuração da infraestrutura em nuvem.
+> ✅ Os passos 1, 2, 4, 5 e 7 já foram validados de verdade, localmente, via Docker Compose (ver seção 6). O passo 3 (OCI Vault) está provisionado no compartment `powerpolis`, mas ainda não integrado ao runtime da API. O passo 6 (Autonomous Database) está provisionado, mas ainda não configurado nem integrado ao fluxo funcional.
 
 ---
 
@@ -90,10 +90,10 @@ através do API Gateway (em produção) ou diretamente (em ambiente local).
 
 | Serviço | Uso | Status |
 |---|---|---|
-| **Object Storage** | Armazenar o modelo serializado (.pkl) | Confirmado — ainda não integrado (hoje o modelo é copiado direto para a imagem Docker, ver seção 6) |
-| **Autonomous Database** | Guardar o histórico de análises processadas | Confirmado — decisão definitiva de implementar, ainda não implementado |
+| **Object Storage** | Armazenar o modelo serializado (.pkl) | ✅ **Integrado e testado** — `model_loader.py` baixa o modelo do bucket privado `powerpolis-bucket-models` via OCI SDK; testado localmente com `MODEL_SOURCE=oci` (Docker Compose continua usando cópia local) |
+| **Autonomous Database** | Guardar o histórico de análises processadas | Provisionado no compartment `powerpolis` — ainda não configurado nem integrado ao fluxo funcional do MVP |
 | **API Gateway** | Expor o endpoint do Backend de forma gerenciada | Confirmado — ainda não configurado |
-| **OCI Vault** | Armazenar e compartilhar credenciais/segredos entre o time | Confirmado — ainda não configurado |
+| **OCI Vault** | Armazenar e compartilhar credenciais/segredos entre o time | Provisionado no compartment `powerpolis` — ainda não integrado ao runtime da API |
 
 **Observação sobre o API Gateway:** por definição, ele precisa apontar para algo já hospedado — isso implica que o Backend também precisará rodar numa instância Compute (Always Free) em produção, mesmo essa não sendo, isoladamente, um dos "4 serviços" oficialmente votados.
 
@@ -119,7 +119,8 @@ data-science/
     │   └── modelo_energiai_v1.pkl
     ├── src/
     │   └── model_service/
-    │       └── main.py
+    │       ├── main.py
+    │       └── model_loader.py          ← [NOVO] carregamento local + OCI
     ├── requirements.txt
     └── Dockerfile
 ```
@@ -166,9 +167,10 @@ data-science/
 
 - [ ] Remover `NODE_ENV=development` do serviço `backend` no `docker-compose.yml` (ver seção 6)
 - [ ] Adicionar o serviço `frontend` ao `docker-compose.yml` quando o React estiver pronto para integrar (Dockerfile do frontend já existe)
-- [ ] Avaliar se o modelo deve continuar sendo copiado para a imagem em build time, ou passar a ser montado como volume (ver seção 6)
+- [ ] Avaliar se o modelo deve continuar sendo copiado para a imagem em build time, ou passar a ser montado como volume (ver seção 6) — nota: para `MODEL_SOURCE=oci` o download já é automático via SDK
 - [ ] Investigar com a Data Science: o exemplo de teste rotulado "Ineficiente" que retornou "Moderado" — já resolvido pela correção da lógica de recomendações (dicionário por categoria real), mas vale uma validação final
 - [ ] Confirmar tratamento de `tipo_imovel` inválido — já implementado no `TratadorDeErros` (400 Bad Request), validar se cobre todos os casos
 - [ ] Provisionar a instância Compute (OCI, produção) necessária para o Backend ficar acessível ao API Gateway
-- [ ] Configurar Object Storage, Autonomous Database, API Gateway e Vault de fato na OCI (hoje só a comunicação local, via Docker Compose, está validada)
+- [x] ~~Configurar Object Storage~~ — **Resolvido:** integração funcional via `model_loader.py`, bucket `powerpolis-bucket-models` testado localmente com `MODEL_SOURCE=oci`
+- [ ] Configurar Autonomous Database, API Gateway e Vault de fato na OCI (Vault e Autonomous Database provisionados no compartment `powerpolis`, mas ainda não integrados ao runtime)
 - [ ] Responsável por manter o CI/CD, considerando a saída da Dryelli do projeto

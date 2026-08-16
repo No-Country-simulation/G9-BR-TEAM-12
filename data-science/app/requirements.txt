@@ -8,3 +8,6 @@ scikit-learn==1.6.1
 pandas==2.2.2
 joblib==1.4.2
 numpy==1.26.4
+
+# OCI SDK — download do modelo via Object Storage (bucket privado)
+oci>=2.133.0

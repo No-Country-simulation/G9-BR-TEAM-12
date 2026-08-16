@@ -1,0 +1,12 @@
+# Variáveis de ambiente (credenciais, secrets)
+.env
+
+# Modelo serializado (binário pesado, não pertence ao Git)
+*.pkl
+
+# Bytecode compilado do Python
+__pycache__/
+*.pyc
+
+# OCI config local (NUNCA commitar credenciais)
+.oci/

@@ -1,1 +1,12 @@
 node_modules
+
+# Segurança global — credenciais e secrets
+.env
+.oci/
+
+# Modelos de ML (binários pesados)
+*.pkl
+
+# Python
+__pycache__/
+*.pyc
