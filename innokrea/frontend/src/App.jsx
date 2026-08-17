@@ -86,7 +86,7 @@ function HomePage() {
         </div>
 
         <p className="hero-description">
-          A EnergiAI ajuda clientes sustentáveis a analisar o consumo de energia através do projeto Powerpolis categorizando a eficiência energética, descobrindo a fonte dos gastos mensais que será tratada de forma preditiva e assertiva com o uso de inteligência artificial
+          O projeto Powerpolis (EnergiAI) ajuda clientes sustentáveis a analisar o consumo de energia, descobrindo a fonte dos gastos mensais através da categorização de eficiência energética. A solução será tratada de forma preditiva e assertiva com o uso de IA para conectar consumidores conscientes a soluções ideais de energia solar.
         </p>
         <div className="hero-actions">
           <ButtonCallToAction />

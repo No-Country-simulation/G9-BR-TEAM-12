@@ -30,6 +30,8 @@
 
 ## <img src="innokrea/frontend/src/assets/powerpolis-logo.png" width="24" alt="Powerpolis"> Sobre o Projeto
 
+> _"O projeto Powerpolis (EnergiAI) ajuda clientes sustentáveis a analisar o consumo de energia, descobrindo a fonte dos gastos mensais através da categorização de eficiência energética. A solução será tratada de forma preditiva e assertiva com o uso de IA para conectar consumidores conscientes a soluções ideais de energia solar."_
+
 O **Powerpolis** é a solução da equipe **G9-BR-TEAM-12** para o desafio **EnergiAI**: uma aplicação que recebe dados de consumo energético de uma residência ou pequeno estabelecimento e, usando um modelo de Machine Learning treinado do zero pela equipe, classifica o perfil em **Eficiente, Moderado ou Ineficiente** e ainda gera recomendações personalizadas de otimização e uma estimativa de custo mensal, tudo entregue via **API REST**, com integração à **Oracle Cloud Infrastructure (OCI)**.
 
 ---

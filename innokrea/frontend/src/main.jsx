@@ -4,10 +4,11 @@ import ReactDOM from "react-dom/client"
 import { BrowserRouter } from "react-router-dom"
 import App from "./App"
 import NavBar from "./components/NavBar"
+import Footer from "./components/Footer"
 import "./style.css"
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-    <React.StrictMode>
+  <React.StrictMode>
     <BrowserRouter>
       <Provider>
         <App />
