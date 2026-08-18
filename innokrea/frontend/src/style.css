@@ -971,3 +971,279 @@ footer {
     font-size: 0.9rem;
     color: var(--text-secondary);
 }
+
+/* ==========================================================================
+   ABOUT PAGE
+   ========================================================================== */
+
+.about-page {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.about-hero {
+    text-align: center;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.about-hero h1 {
+    background: linear-gradient(135deg, #FFF, var(--luminous-citrine));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-hero-desc {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 780px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.about-card {
+    background: var(--surface-card);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--surface-border);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    transition: var(--transition-smooth);
+}
+
+.about-card:hover {
+    border-color: var(--surface-border-hover);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35), 0 0 16px var(--cyan-glow);
+    transform: translateY(-2px);
+}
+
+.about-card-wide {
+    grid-column: 1 / -1;
+}
+
+.about-card h2 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--surface-border);
+}
+
+.about-card h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--cyber-cyan);
+    margin-bottom: 0.5rem;
+}
+
+.about-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.65;
+}
+
+.about-card ol,
+.about-card ul {
+    padding-left: 1.25rem;
+    margin: 0.75rem 0;
+}
+
+.about-card li {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.35rem;
+}
+
+.about-card-note {
+    margin-top: 1rem;
+    padding: 1rem 1.25rem;
+    background: rgba(0, 229, 255, 0.04);
+    border-left: 3px solid var(--cyber-cyan);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    font-size: 0.9rem;
+}
+
+/* Code blocks */
+.about-code-block {
+    background: rgba(10, 13, 20, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-sm);
+    padding: 1rem 1.25rem;
+    margin: 0.5rem 0;
+    overflow-x: auto;
+}
+
+.about-code-block code {
+    font-family: 'Fira Code', 'Cascadia Code', monospace;
+    font-size: 0.85rem;
+    color: var(--cyber-cyan);
+    white-space: pre;
+    line-height: 1.5;
+}
+
+.about-code-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 0.75rem;
+}
+
+.about-code-col {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Architecture list */
+.about-arch-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 0.5rem 0 1rem;
+}
+
+.about-arch-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.65rem 0.85rem;
+    background: rgba(10, 13, 20, 0.4);
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    transition: var(--transition-fast);
+}
+
+.about-arch-item:hover {
+    background: rgba(10, 13, 20, 0.6);
+    border-color: rgba(0, 229, 255, 0.15);
+}
+
+.about-arch-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--cyber-cyan);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    min-width: 120px;
+    padding-top: 1px;
+}
+
+.about-arch-value {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.about-arch-value code {
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: var(--electric-magenta);
+    background: rgba(255, 0, 255, 0.08);
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+}
+
+/* Highlights */
+.about-highlights {
+    list-style: none;
+    padding-left: 0;
+}
+
+.about-highlights li {
+    position: relative;
+    padding: 0.75rem 1rem 0.75rem 1.25rem;
+    margin-bottom: 0.5rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: var(--radius-sm);
+    border-left: 3px solid var(--gilded-circuit);
+    transition: var(--transition-fast);
+}
+
+.about-highlights li:hover {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+/* Callout */
+.about-callout {
+    background: rgba(255, 215, 0, 0.06);
+    border: 1px solid rgba(255, 215, 0, 0.15);
+    border-radius: var(--radius-sm);
+    padding: 0.85rem 1.15rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: var(--gilded-circuit);
+}
+
+/* Roadmap */
+.about-roadmap-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+}
+
+.about-roadmap-item {
+    background: rgba(10, 13, 20, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    transition: var(--transition-fast);
+}
+
+.about-roadmap-item:hover {
+    border-color: rgba(0, 229, 255, 0.2);
+    background: rgba(10, 13, 20, 0.65);
+}
+
+.about-roadmap-item code {
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: var(--cyber-cyan);
+    background: rgba(0, 229, 255, 0.08);
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+}
+
+/* Footer link */
+.about-footer-link {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5rem;
+    padding: 0;
+    background: none;
+    border: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-code-pair {
+        grid-template-columns: 1fr;
+    }
+
+    .about-roadmap-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-arch-item {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .about-arch-label {
+        min-width: unset;
+    }
+}
